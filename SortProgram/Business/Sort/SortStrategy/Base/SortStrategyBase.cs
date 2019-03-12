@@ -16,16 +16,18 @@ namespace Business.Sort.SortStrategy.Base
         protected readonly ISortType sortType;
         protected readonly IStepCounter stepCounter;
 
-        protected abstract IEnumerable<decimal> HandleSorting(IEnumerable<decimal> sequence);
+        protected abstract IEnumerable<decimal> HandleSorting(IList<decimal> sequence);
 
-        public ISortResult Sort(IEnumerable<decimal> frequence, ISortType sortType)
+        public ISortResult Sort(IEnumerable<decimal> sequence, ISortType sortType)
         {
             ISortResult sortResult;
-            IEnumerable<decimal> sortedFrequence;
+            IEnumerable<decimal> sortedSequence;
+            var copySequence = sequence.ToArray();
+                        
+            sortedSequence = HandleSorting(copySequence);
+            sortedSequence = sortType.Update(sortedSequence);
 
-            sortedFrequence = HandleSorting(frequence);
-            sortedFrequence = sortType.Update(sortedFrequence);
-            sortResult = new SortResult(sortedFrequence, stepCounter.CompareOperationsCount, stepCounter.SwapOperationsCount);
+            sortResult = new SortResult(sortedSequence, stepCounter.CompareOperationsCount, stepCounter.SwapOperationsCount);
 
             return sortResult;
         }
@@ -36,7 +38,7 @@ namespace Business.Sort.SortStrategy.Base
             this.stepCounter = new StepCounter.StepCounter();
         }
 
-        protected void Swap(IEnumerable<decimal> sequence, int firstIndex, int secondIndex)
+        protected void Swap(IList<decimal> sequence, int firstIndex, int secondIndex)
         {
             throw new NotImplementedException();
         }
