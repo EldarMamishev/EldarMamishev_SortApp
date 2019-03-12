@@ -7,7 +7,7 @@ using ViewModel.Base;
 
 namespace ViewModel.Views
 {
-    class OutputControlsViewModel : ViewModelBase
+    public sealed class OutputControlsViewModel : ViewModelBase
     {
 
     }

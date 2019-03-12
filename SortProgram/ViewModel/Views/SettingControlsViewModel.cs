@@ -4,32 +4,37 @@ using ViewModel.Base;
 
 namespace ViewModel.Views
 {
-    class SettingControlsViewModel : ViewModelBase
+    public sealed class SettingControlsViewModel : ViewModelBase
     {
-        public SortTypeEnum SelectedSortType
-        {
-            get
-            {
-                return this.SelectedSortType;
-            }
-            set
-            {
-                this.SelectedSortType = value;
-                OnPropertyChanged("SelectedSortType");
-            }
-        }  
+        private SortAlgorithmEnum selectedSortAlgorithm;
+        private SortTypeEnum selectedSortType;
 
         public SortAlgorithmEnum SelectedSortAlgorithm
         {
             get
             {
-                return this.SelectedSortAlgorithm;
+                return this.selectedSortAlgorithm;
             }
             set
             {
-                this.SelectedSortAlgorithm = value;
+                this.selectedSortAlgorithm = value;
                 OnPropertyChanged("SelectedSortAlgorithm");
             }
         }
+
+        public SortTypeEnum SelectedSortType
+        {
+            get
+            {
+                return this.selectedSortType;
+            }
+            set
+            {
+                this.selectedSortType = value;
+                OnPropertyChanged("SelectedSortType");
+            }
+        }  
+
+        
     }
 }

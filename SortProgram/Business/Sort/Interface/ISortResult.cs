@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace Business.Sort.Interface
 {
-    interface ISortResult
+    public interface ISortResult
     {
+        int CompareOperationsCount { get; }
         IEnumerable<decimal> SortedNumbers { get; }
         int SwapOperationsCount { get; }
-        int CompareOperationsCount { get; }
     }
 }

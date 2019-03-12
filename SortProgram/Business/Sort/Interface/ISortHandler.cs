@@ -7,8 +7,8 @@ using Business.Enum;
 
 namespace Business.Sort.Interface
 {
-    interface ISortHandler
+    public interface ISortHandler
     {
-        ISortResult Handle (string sequence, SortAlgorithmEnum sortAlgorithm, SortTypeEnum sortType);
+        ISortResult Handle(string sequence, SortAlgorithmEnum sortAlgorithm, SortTypeEnum sortType);
     }
 }

@@ -3,18 +3,20 @@ using ViewModel.Base;
 
 namespace ViewModel.Views
 {
-    class InputControlsViewModel : ViewModelBase
+    public sealed class InputControlsViewModel : ViewModelBase
     {
+        private string inputSequence;
+
         public string InputSequence
         {
             get
             {
-                return this.InputSequence;
+                return this.inputSequence;
             }
 
             set
             {
-                this.InputSequence = value;
+                this.inputSequence = value;
                 OnPropertyChanged("InputSequence");
             }
         }
