@@ -45,5 +45,17 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Sort\Enum\" />
+    <Folder Include="Sort\Interface\" />
+    <Folder Include="Sort\Parse\Exception\" />
+    <Folder Include="Sort\Parse\Interface\" />
+    <Folder Include="Sort\SortStrategy\Base\" />
+    <Folder Include="Sort\SortStrategy\Factory\Interface\" />
+    <Folder Include="Sort\SortStrategy\Interface\" />
+    <Folder Include="Sort\SortStrategy\StepCounter\Interface\" />
+    <Folder Include="Sort\SortType\Factory\Interface\" />
+    <Folder Include="Sort\SortType\Interface\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
