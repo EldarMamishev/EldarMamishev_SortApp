@@ -14,9 +14,9 @@ namespace Business.Sort.SortStrategy.StepCounter
 
         public int CompareOperationsCount => this.compareOperationsCount;
 
-        public void CountCompareOperation() => compareOperationsCount++;
+        public void CountCompareOperation() => this.compareOperationsCount++;
 
-        public void CountSwapOperation() => swapOperationsCount++;
+        public void CountSwapOperation() => this.swapOperationsCount++;
 
         public int SwapOperationsCount => this.swapOperationsCount;
     }
