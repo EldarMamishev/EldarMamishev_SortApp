@@ -18,20 +18,30 @@ namespace Business.Sort.SortStrategy.Base
 
         protected abstract IEnumerable<decimal> HandleSorting(IList<decimal> sequence);
 
-        public ISortResult Sort(IEnumerable<decimal> sequence, ISortType sortType)
+        public ISortResult Sort(IEnumerable<decimal> sequence)
         {
+            if (sequence == null)
+            {
+                throw new ArgumentNullException(nameof(sequence));
+            }
+            
             decimal[] copySequence = sequence.ToArray();
 
             IEnumerable<decimal> sortedSequence = HandleSorting(copySequence);
-            sortedSequence = sortType.Update(sortedSequence);
+            sortedSequence = this.sortType.Update(sortedSequence);
 
-            var sortResult = new SortResult(sortedSequence, stepCounter.CompareOperationsCount, stepCounter.SwapOperationsCount);
+            var sortResult = new SortResult(sortedSequence, this.stepCounter.CompareOperationsCount, this.stepCounter.SwapOperationsCount);
 
             return sortResult;
         }
 
         public SortStrategyBase(ISortType sortType)
         {
+            if (sortType == null)
+            {
+                throw new ArgumentNullException(nameof(sortType));
+            }
+
             this.sortType = sortType;
             this.stepCounter = new StepCounter.StepCounter();
         }

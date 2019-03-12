@@ -10,6 +10,6 @@ namespace Business.Sort.SortStrategy.Interface
 {
     public interface ISortStrategy
     {
-        ISortResult Sort(IEnumerable<decimal> sequence, ISortType sortType);
+        ISortResult Sort(IEnumerable<decimal> sequence);
     }
 }

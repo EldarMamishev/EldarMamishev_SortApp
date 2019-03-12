@@ -7,7 +7,7 @@ using Business.Sort.Interface;
 
 namespace Business.Sort
 {
-    class SortResult : ISortResult
+    public sealed class SortResult : ISortResult
     {
         private readonly int compareOperationsCount;
         private readonly IEnumerable<decimal> sortedNumbers;
@@ -19,6 +19,11 @@ namespace Business.Sort
 
         public SortResult(IEnumerable<decimal> sortedSequence, int compareOperationsCount, int swapOperationsCount)
         {
+            if(sortedSequence == null)
+            {
+                throw new ArgumentNullException(nameof(sortedSequence));
+            }
+            
             this.sortedNumbers = sortedSequence;
             this.compareOperationsCount = compareOperationsCount;
             this.swapOperationsCount = swapOperationsCount;
