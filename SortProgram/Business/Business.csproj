@@ -48,8 +48,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="Enums\SortAlgorithmEnum.cs" />
-    <Compile Include="Enums\SortTypeEnum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
