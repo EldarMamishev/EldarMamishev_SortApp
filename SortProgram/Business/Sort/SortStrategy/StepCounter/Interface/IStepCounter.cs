@@ -9,8 +9,8 @@ namespace Business.Sort.SortStrategy.StepCounter.Interface
     public interface IStepCounter
     {
         int CompareOperationsCount { get; }
-        void CountSwapOperation ();
-        void CountCompareOperation ();
+        void CountSwapOperation();
+        void CountCompareOperation();
         int SwapOperationsCount { get; }
     }
 }
