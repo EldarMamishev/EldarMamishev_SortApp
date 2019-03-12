@@ -17,7 +17,7 @@ namespace ViewModel.Views
             set
             {
                 this.inputSequence = value;
-                OnPropertyChanged("InputSequence");
+                this.OnPropertyChanged("InputSequence");
             }
         }
 

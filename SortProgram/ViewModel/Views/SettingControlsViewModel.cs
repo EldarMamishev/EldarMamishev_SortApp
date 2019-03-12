@@ -18,7 +18,7 @@ namespace ViewModel.Views
             set
             {
                 this.selectedSortAlgorithm = value;
-                OnPropertyChanged("SelectedSortAlgorithm");
+                this.OnPropertyChanged("SelectedSortAlgorithm");
             }
         }
 
@@ -31,7 +31,7 @@ namespace ViewModel.Views
             set
             {
                 this.selectedSortType = value;
-                OnPropertyChanged("SelectedSortType");
+                this.OnPropertyChanged("SelectedSortType");
             }
         }  
 
