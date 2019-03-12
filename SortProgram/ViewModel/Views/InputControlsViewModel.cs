@@ -20,6 +20,5 @@ namespace ViewModel.Views
                 this.OnPropertyChanged("InputSequence");
             }
         }
-
     }
 }

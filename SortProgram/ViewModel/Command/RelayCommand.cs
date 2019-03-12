@@ -31,10 +31,7 @@ namespace ViewModel.Command
         public RelayCommand(Action<object> execute, Func<object, bool> canExecute = null)
         {
             this.execute = execute;
-            this.canExecute = canExecute;
-            
-        }
-
-        
+            this.canExecute = canExecute;            
+        }        
     }
 }

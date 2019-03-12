@@ -33,8 +33,6 @@ namespace ViewModel.Views
                 this.selectedSortType = value;
                 this.OnPropertyChanged("SelectedSortType");
             }
-        }  
-
-        
+        }          
     }
 }
