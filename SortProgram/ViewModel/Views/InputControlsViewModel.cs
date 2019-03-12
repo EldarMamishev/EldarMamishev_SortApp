@@ -13,7 +13,6 @@ namespace ViewModel.Views
             {
                 return this.inputSequence;
             }
-
             set
             {
                 this.inputSequence = value;
