@@ -19,7 +19,7 @@ namespace Business.Sort
 
         public SortResult(IEnumerable<decimal> sortedSequence, int compareOperationsCount, int swapOperationsCount)
         {
-            if(sortedSequence == null)
+            if (sortedSequence == null)
             {
                 throw new ArgumentNullException(nameof(sortedSequence));
             }
