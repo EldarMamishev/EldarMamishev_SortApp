@@ -12,30 +12,12 @@ namespace Business.Sort.SortStrategy.StepCounter
         private int compareOperationsCount;
         private int swapOperationsCount;
 
-        public int CompareOperationsCount
-        {
-            get
-            {
-                return this.compareOperationsCount;
-            }
-        }        
+        public int CompareOperationsCount => this.compareOperationsCount;
 
-        public void CountCompareOperation()
-        {
-            compareOperationsCount++;
-        }
+        public void CountCompareOperation() => compareOperationsCount++;
 
-        public void CountSwapOperation()
-        {
-            swapOperationsCount++;
-        }
+        public void CountSwapOperation() => swapOperationsCount++;
 
-        public int SwapOperationsCount
-        {
-            get
-            {
-                return this.swapOperationsCount;
-            }
-        }
+        public int SwapOperationsCount => this.swapOperationsCount;
     }
 }
