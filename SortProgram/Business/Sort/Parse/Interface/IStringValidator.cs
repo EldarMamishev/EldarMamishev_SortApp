@@ -8,6 +8,6 @@ namespace Business.Sort.Parse.Interface
 {
     public interface IStringValidator
     {
-        void Validate(string frequence);
+        void Validate(string sequence);
     }
 }

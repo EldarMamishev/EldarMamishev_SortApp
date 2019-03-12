@@ -8,7 +8,7 @@ namespace Business.Sort.Parse.Interface
 {
     public interface IStringToCollectionParser<T>
     {
-        string ParseCollectionToString(IEnumerable<T> frequence);
-        IEnumerable<T> ParseStringToCollection(string frequence);
+        string ParseCollectionToString(IEnumerable<T> sequence);
+        IEnumerable<T> ParseStringToCollection(string sequence);
     }
 }

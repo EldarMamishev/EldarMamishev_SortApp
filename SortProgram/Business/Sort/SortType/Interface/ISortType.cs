@@ -8,6 +8,6 @@ namespace Business.Sort.SortType.Interface
 {
     public interface ISortType
     {
-        IEnumerable<decimal> Update(IEnumerable<decimal> sortedFrequence);
+        IEnumerable<decimal> Update(IEnumerable<decimal> sortedSequence);
     }
 }

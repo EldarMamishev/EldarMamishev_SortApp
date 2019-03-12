@@ -20,14 +20,12 @@ namespace Business.Sort.SortStrategy.Base
 
         public ISortResult Sort(IEnumerable<decimal> sequence, ISortType sortType)
         {
-            ISortResult sortResult;
-            IEnumerable<decimal> sortedSequence;
-            var copySequence = sequence.ToArray();
-                        
-            sortedSequence = HandleSorting(copySequence);
+            decimal[] copySequence = sequence.ToArray();
+
+            IEnumerable<decimal> sortedSequence = HandleSorting(copySequence);
             sortedSequence = sortType.Update(sortedSequence);
 
-            sortResult = new SortResult(sortedSequence, stepCounter.CompareOperationsCount, stepCounter.SwapOperationsCount);
+            var sortResult = new SortResult(sortedSequence, stepCounter.CompareOperationsCount, stepCounter.SwapOperationsCount);
 
             return sortResult;
         }
@@ -40,12 +38,11 @@ namespace Business.Sort.SortStrategy.Base
 
         protected void Swap(IList<decimal> sequence, int firstIndex, int secondIndex)
         {
-            throw new NotImplementedException();
+            decimal tempSequenceElement = sequence[firstIndex];
+            sequence[firstIndex] = sequence[secondIndex];
+            sequence[secondIndex] = tempSequenceElement;
         }
 
-        protected bool Compare(decimal firstNumber, decimal secondNumber)
-        {
-            return firstNumber > secondNumber;
-        }
+        protected bool Compare(decimal firstNumber, decimal secondNumber) => firstNumber > secondNumber;
     }
 }

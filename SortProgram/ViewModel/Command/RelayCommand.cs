@@ -18,15 +18,9 @@ namespace ViewModel.Command
             remove { CommandManager.RequerySuggested -= value; }
         }
 
-        public bool CanExecute(object parameter)
-        {
-            throw new NotImplementedException();
-        }       
+        public bool CanExecute(object parameter) => this.canExecute == null || this.canExecute(parameter);
 
-        public void Execute(object parameter)
-        {
-            throw new NotImplementedException();
-        }
+        public void Execute(object parameter) => this.execute(parameter);
 
         public RelayCommand(Action<object> execute, Func<object, bool> canExecute = null)
         {

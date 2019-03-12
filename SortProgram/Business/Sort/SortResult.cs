@@ -13,35 +13,17 @@ namespace Business.Sort
         private readonly IEnumerable<decimal> sortedNumbers;
         private readonly int swapOperationsCount;
 
-        public int CompareOperationsCount
-        {
-            get
-            {
-                return this.compareOperationsCount;
-            }
-        }
+        public int CompareOperationsCount => this.compareOperationsCount;
+            
+        public IEnumerable<decimal> SortedNumbers => this.sortedNumbers;
 
-        public IEnumerable<decimal> SortedNumbers
+        public SortResult(IEnumerable<decimal> sortedSequence, int compareOperationsCount, int swapOperationsCount)
         {
-            get
-            {
-                return this.sortedNumbers;
-            }
-        }
-
-        public SortResult(IEnumerable<decimal> sortedFrequence, int compareOperationsCount, int swapOperationsCount)
-        {
-            this.sortedNumbers = sortedFrequence;
+            this.sortedNumbers = sortedSequence;
             this.compareOperationsCount = compareOperationsCount;
             this.swapOperationsCount = swapOperationsCount;
         }
 
-        public int SwapOperationsCount
-        {
-            get
-            {
-                return this.swapOperationsCount;
-            }
-        }
+        public int SwapOperationsCount => this.swapOperationsCount;
     }
 }
