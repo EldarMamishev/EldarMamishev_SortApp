@@ -44,10 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Sort\Enum\SortAlgorithmEnum.cs" />
+    <Compile Include="Sort\Enum\SortTypeEnum.cs" />
+    <Compile Include="Sort\Interface\ISortHandler.cs" />
+    <Compile Include="Sort\Interface\ISortResult.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Sort\Enum\" />
-    <Folder Include="Sort\Interface\" />
     <Folder Include="Sort\Parse\Exception\" />
     <Folder Include="Sort\Parse\Interface\" />
     <Folder Include="Sort\SortStrategy\Base\" />
