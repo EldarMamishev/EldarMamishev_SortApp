@@ -1,5 +1,5 @@
 ﻿
-namespace Business.Enum
+namespace Business.Sort.Enum
 {
     public enum SortAlgorithmEnum
     {

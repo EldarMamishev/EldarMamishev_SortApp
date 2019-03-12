@@ -50,15 +50,17 @@
     <Compile Include="Sort\Interface\ISortResult.cs" />
     <Compile Include="Sort\Parse\Interface\IStringToCollectionParser.cs" />
     <Compile Include="Sort\Parse\Interface\IStringValidator.cs" />
+    <Compile Include="Sort\SortResult.cs" />
+    <Compile Include="Sort\SortStrategy\Base\SortStrategyBase.cs" />
     <Compile Include="Sort\SortStrategy\Factory\Interface\ISortStrategyFactory.cs" />
     <Compile Include="Sort\SortStrategy\Interface\ISortStrategy.cs" />
     <Compile Include="Sort\SortStrategy\StepCounter\Interface\IStepCounter.cs" />
+    <Compile Include="Sort\SortStrategy\StepCounter\StepCounter.cs" />
     <Compile Include="Sort\SortType\Factory\Interface\ISortTypeFactory.cs" />
     <Compile Include="Sort\SortType\Interface\ISortType.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Sort\Parse\Exception\" />
-    <Folder Include="Sort\SortStrategy\Base\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

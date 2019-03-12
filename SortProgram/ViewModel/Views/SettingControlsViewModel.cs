@@ -1,5 +1,5 @@
 ﻿using System;
-using Business.Enum;
+using Business.Sort.Enum;
 using ViewModel.Base;
 
 namespace ViewModel.Views

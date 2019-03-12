@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Business.Enum;
+using Business.Sort.Enum;
 using Business.Sort.SortStrategy.Interface;
 
 namespace Business.Sort.SortStrategy.Factory.Interface
