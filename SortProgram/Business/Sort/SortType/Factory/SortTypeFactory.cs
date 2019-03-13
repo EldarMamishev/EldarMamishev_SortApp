@@ -15,16 +15,15 @@ namespace Business.Sort.SortType.Factory
         {
             switch (sortType)
             { 
-                case SortTypeEnum.Ascending :
+                case SortTypeEnum.Ascending:
                 {
                     return new AscendingSortType();
                 }
-
-                case SortTypeEnum.Descending :
+                case SortTypeEnum.Descending:
                 {
                     return new DescendingSortType();
                 }
-                default :
+                default:
                 {
                     return null;
                 }

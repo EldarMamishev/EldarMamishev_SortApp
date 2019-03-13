@@ -15,29 +15,30 @@ namespace Business.Sort.SortStrategy.Factory
     public sealed class SortStrategyFactory : ISortStrategyFactory
     {
         private ISortTypeFactory sortTypeFactory;
+
         public ISortStrategy CreateSort(SortAlgorithmEnum sortAlgorithm, SortTypeEnum sortType)
         {
             sortTypeFactory = new SortTypeFactory();
             ISortType neededSortType = sortTypeFactory.CreateSortType(sortType);
             switch (sortAlgorithm)
             {
-                case SortAlgorithmEnum.InsertionSort :
+                case SortAlgorithmEnum.InsertionSort:
                 {
                     return new InsertionSort(neededSortType);
                 }
-                case SortAlgorithmEnum.MergeSort :
+                case SortAlgorithmEnum.MergeSort:
                 {
                     return new MergeSort(neededSortType);
                 }
-                case SortAlgorithmEnum.QuickSort :
+                case SortAlgorithmEnum.QuickSort:
                 {
                     return new QuickSort(neededSortType);
                 }
-                case SortAlgorithmEnum.SelectionSort :
+                case SortAlgorithmEnum.SelectionSort:
                 {
                     return new SelectionSort(neededSortType);
                 }
-                default :
+                default:
                     return null;
             }
         }

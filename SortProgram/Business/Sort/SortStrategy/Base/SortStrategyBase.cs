@@ -49,10 +49,10 @@ namespace Business.Sort.SortStrategy.Base
             this.stepCounter.CountSwapOperation();
         }
 
-        protected bool CompareFirstBigger(decimal greaterNumber, decimal smallerNumber)
+        protected bool CompareFirstBigger(decimal firstNumber, decimal secondNumber)
         {
             this.stepCounter.CountCompareOperation();
-            return greaterNumber > smallerNumber;
+            return firstNumber > secondNumber;
         }
     }
 }
