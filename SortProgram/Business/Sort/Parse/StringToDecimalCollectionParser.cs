@@ -26,6 +26,8 @@ namespace Business.Sort.Parse
 
         public IEnumerable<decimal> ParseStringToCollection(string sequence)
         {
+            IStringValidator stringValidator = new StringToDecimalValidator();
+            stringValidator.Validate(sequence);
             decimal[] arraySequence = sequence.Split(' ', '\t', '\n').Where(x => !string.IsNullOrWhiteSpace(x)).Select(x => decimal.Parse(x)).ToArray();
 
             return arraySequence;
