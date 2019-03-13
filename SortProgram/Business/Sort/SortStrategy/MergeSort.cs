@@ -24,7 +24,7 @@ namespace Business.Sort.SortStrategy
             if (sequence.Length <= 1)
                 return sequence;
 
-            int middleIndex = sequence.Length/2;
+            int middleIndex = sequence.Length / 2;
             int leftPartSize = middleIndex;
             int rightPartSize = sequence.Length - leftPartSize;
 
