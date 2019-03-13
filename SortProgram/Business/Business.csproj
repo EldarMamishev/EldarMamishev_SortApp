@@ -55,6 +55,7 @@
     <Compile Include="Sort\SortStrategy\Factory\Interface\ISortStrategyFactory.cs" />
     <Compile Include="Sort\SortStrategy\InsertionSort.cs" />
     <Compile Include="Sort\SortStrategy\Interface\ISortStrategy.cs" />
+    <Compile Include="Sort\SortStrategy\MergeSort.cs" />
     <Compile Include="Sort\SortStrategy\SelectionSort.cs" />
     <Compile Include="Sort\SortStrategy\StepCounter\Interface\IStepCounter.cs" />
     <Compile Include="Sort\SortStrategy\StepCounter\StepCounter.cs" />
