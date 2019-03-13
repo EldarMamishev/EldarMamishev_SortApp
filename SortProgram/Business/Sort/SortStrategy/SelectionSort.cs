@@ -17,13 +17,13 @@ namespace Business.Sort.SortStrategy
         {
             decimal[] copySequence = sequence.ToArray();
 
-            for(int i = 0; i < copySequence.Length; i++)
+            for (int i = 0; i < copySequence.Length; i++)
             {
                 int indexOfMin = i;
 
-                for(int j = i + 1; j < copySequence.Length; j++)
+                for (int j = i + 1; j < copySequence.Length; j++)
                 {
-                    if(CompareFirstBigger(copySequence[i], copySequence[j]))
+                    if (CompareFirstBigger(copySequence[i], copySequence[j]))
                         indexOfMin = j;
                 }
 

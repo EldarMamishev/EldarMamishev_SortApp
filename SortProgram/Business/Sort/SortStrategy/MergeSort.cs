@@ -21,7 +21,7 @@ namespace Business.Sort.SortStrategy
 
         private decimal[] RecursiveMergeSort(decimal[] sequence)
         {
-            if(sequence.Length <= 1)
+            if (sequence.Length <= 1)
                 return sequence;
 
             int middleIndex = sequence.Length/2;
@@ -31,12 +31,12 @@ namespace Business.Sort.SortStrategy
             decimal[] leftPart = new decimal[leftPartSize];
             decimal[] rightPart = new decimal[rightPartSize];
 
-            for(int i = 0; i < leftPartSize; i++)
+            for (int i = 0; i < leftPartSize; i++)
             {
                 leftPart[i] = sequence[i];
             }
 
-            for(int i = 0; i < rightPartSize; i++)
+            for (int i = 0; i < rightPartSize; i++)
             {
                 rightPart[i] = sequence[middleIndex + i];
             }
@@ -52,11 +52,11 @@ namespace Business.Sort.SortStrategy
             int leftIndex = 0;
             int rightIndex = 0;
 
-            for(int i = 0; i < mergedSequence.Length; i++)
+            for (int i = 0; i < mergedSequence.Length; i++)
             {
-                if(leftIndex < leftPart.Length && rightIndex < rightPart.Length)
+                if (leftIndex < leftPart.Length && rightIndex < rightPart.Length)
                 {
-                    if(CompareFirstBigger(leftPart[leftIndex], rightPart[rightIndex]))
+                    if (CompareFirstBigger(leftPart[leftIndex], rightPart[rightIndex]))
                     {
                         mergedSequence[i] = rightPart[rightIndex];
                         rightIndex++;
@@ -69,7 +69,7 @@ namespace Business.Sort.SortStrategy
                 }
                 else
                 {
-                    if(rightIndex < rightPart.Length)
+                    if (rightIndex < rightPart.Length)
                     {
                         mergedSequence[i] = rightPart[rightIndex];
                         rightIndex++;
