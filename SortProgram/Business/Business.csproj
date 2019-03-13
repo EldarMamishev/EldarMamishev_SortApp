@@ -48,6 +48,7 @@
     <Compile Include="Sort\Enum\SortTypeEnum.cs" />
     <Compile Include="Sort\Interface\ISortHandler.cs" />
     <Compile Include="Sort\Interface\ISortResult.cs" />
+    <Compile Include="Sort\Parse\Exception\ValidationException.cs" />
     <Compile Include="Sort\Parse\Interface\IStringToCollectionParser.cs" />
     <Compile Include="Sort\Parse\Interface\IStringValidator.cs" />
     <Compile Include="Sort\SortStrategy\Factory\SortStrategyFactory.cs" />
@@ -67,8 +68,6 @@
     <Compile Include="Sort\SortType\Factory\SortTypeFactory.cs" />
     <Compile Include="Sort\SortType\Interface\ISortType.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Sort\Parse\Exception\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

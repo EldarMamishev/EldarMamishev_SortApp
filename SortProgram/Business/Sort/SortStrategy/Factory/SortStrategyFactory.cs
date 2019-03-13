@@ -21,23 +21,23 @@ namespace Business.Sort.SortStrategy.Factory
             ISortType neededSortType = sortTypeFactory.CreateSortType(sortType);
             switch (sortAlgorithm)
             {
-                case SortAlgorithmEnum.InsertionSort:
+                case SortAlgorithmEnum.InsertionSort :
                 {
                     return new InsertionSort(neededSortType);
                 }
-                case SortAlgorithmEnum.MergeSort:
+                case SortAlgorithmEnum.MergeSort :
                 {
                     return new MergeSort(neededSortType);
                 }
-                case SortAlgorithmEnum.QuickSort:
+                case SortAlgorithmEnum.QuickSort :
                 {
                     return new QuickSort(neededSortType);
                 }
-                case SortAlgorithmEnum.SelectionSort:
+                case SortAlgorithmEnum.SelectionSort :
                 {
                     return new SelectionSort(neededSortType);
                 }
-                default:
+                default :
                     return null;
             }
         }
