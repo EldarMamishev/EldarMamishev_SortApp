@@ -46,12 +46,12 @@ namespace Business.Sort.SortStrategy.Base
             decimal tempSequenceElement = sequence[firstIndex];
             sequence[firstIndex] = sequence[secondIndex];
             sequence[secondIndex] = tempSequenceElement;
-            stepCounter.CountSwapOperation();
+            this.stepCounter.CountSwapOperation();
         }
 
         protected bool CompareFirstBigger(decimal greaterNumber, decimal smallerNumber)
         {
-            stepCounter.CountCompareOperation();
+            this.stepCounter.CountCompareOperation();
             return greaterNumber > smallerNumber;
         }
     }
