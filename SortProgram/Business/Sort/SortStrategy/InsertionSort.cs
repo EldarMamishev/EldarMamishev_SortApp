@@ -14,7 +14,7 @@ namespace Business.Sort.SortStrategy
         {
             decimal[] copySequence = sequence.ToArray();
 
-            for (int i = 0; i < copySequence.Length; i++)
+            for (int i = 1; i < copySequence.Length; i++)
             {
                 for (int j = i; j > 0; j--)
                 {

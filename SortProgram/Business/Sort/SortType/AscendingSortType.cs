@@ -9,9 +9,6 @@ namespace Business.Sort.SortType
 {
     public sealed class AscendingSortType : ISortType 
     {
-        public IEnumerable<decimal> Update(IEnumerable<decimal> sortedSequence)
-        {
-            return sortedSequence;
-        }
+        public IEnumerable<decimal> Update(IEnumerable<decimal> sortedSequence) => sortedSequence;
     }
 }

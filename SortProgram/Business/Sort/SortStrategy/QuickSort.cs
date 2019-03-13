@@ -14,7 +14,7 @@ namespace Business.Sort.SortStrategy
         {
             decimal[] copySequence = sequence.ToArray();
 
-            this.RecursiveQuickSort(copySequence, 0, copySequence.Length);
+            this.RecursiveQuickSort(copySequence, 0, copySequence.Length - 1);
 
             return copySequence;
         }
@@ -27,18 +27,18 @@ namespace Business.Sort.SortStrategy
             if (startIndex >= endIndex)
                 return;
 
-            int markedPosition = this.ReturnMarkedPosition(sequence, startIndex, endIndex);
-            this.RecursiveQuickSort(sequence, startIndex, markedPosition - 1);
-            this.RecursiveQuickSort(sequence, markedPosition + 1, endIndex);
+            int pivotPosition = this.MakePartitionAndGivePivotPosition(sequence, startIndex, endIndex);
+            this.RecursiveQuickSort(sequence, startIndex, pivotPosition - 1);
+            this.RecursiveQuickSort(sequence, pivotPosition + 1, endIndex);
         }
 
-        private int ReturnMarkedPosition(decimal[] sequence, int startIndex, int endIndex)
+        private int MakePartitionAndGivePivotPosition(decimal[] sequence, int startIndex, int endIndex)
         {
             int markedIndex = startIndex;
 
             for (int i = startIndex; i <= endIndex; i++)
             {
-                if (this.CompareFirstBigger(sequence[i], sequence[endIndex]))
+                if (this.CompareFirstBigger(sequence[endIndex], sequence[i]))
                 {
                     this.Swap(sequence, markedIndex, i);
                     markedIndex++;
