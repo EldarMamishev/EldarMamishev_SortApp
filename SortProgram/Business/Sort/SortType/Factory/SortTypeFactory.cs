@@ -9,7 +9,7 @@ using Business.Sort.SortType.Interface;
 
 namespace Business.Sort.SortType.Factory
 {
-    class SortTypeFactory : ISortTypeFactory
+    public sealed class SortTypeFactory : ISortTypeFactory
     {
         public ISortType CreateSortType(SortTypeEnum sortType)
         {

@@ -12,7 +12,7 @@ using Business.Sort.SortType.Interface;
 
 namespace Business.Sort.SortStrategy.Factory
 {
-    class SortStrategyFactory : ISortStrategyFactory
+    public sealed class SortStrategyFactory : ISortStrategyFactory
     {
         private ISortTypeFactory sortTypeFactory;
         public ISortStrategy CreateSort(SortAlgorithmEnum sortAlgorithm, SortTypeEnum sortType)

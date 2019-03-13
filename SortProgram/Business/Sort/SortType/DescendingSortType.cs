@@ -7,7 +7,7 @@ using Business.Sort.SortType.Interface;
 
 namespace Business.Sort.SortType
 {
-    class DescendingSortType : ISortType
+    public sealed class DescendingSortType : ISortType
     {
         public IEnumerable<decimal> Update(IEnumerable<decimal> sortedSequence)
         {
