@@ -19,7 +19,7 @@ namespace Business.Sort.SortStrategy
 
             for(int i = 0; i < copySequence.Length; i++)
             {
-                for(int j = 0; j < copySequence.Length; j++)
+                for(int j = i - 1; j >= 0; j--)
                 {
                     if (this.CompareFirstBigger(copySequence[j], copySequence[i]))
                         Swap(copySequence, i, j);
