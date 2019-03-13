@@ -9,10 +9,7 @@ using Business.Sort.SortType.Interface;
 namespace Business.Sort.SortStrategy
 {
     public sealed class SelectionSort : SortStrategyBase
-    {
-        public SelectionSort(ISortType sortType) : base(sortType)
-        { }
-
+    { 
         protected override IEnumerable<decimal> HandleSorting(IList<decimal> sequence)
         {
             decimal[] copySequence = sequence.ToArray();
@@ -32,5 +29,8 @@ namespace Business.Sort.SortStrategy
 
             return copySequence;
         }
+
+        public SelectionSort(ISortType sortType) : base(sortType)
+        { }
     }
 }

@@ -10,9 +10,6 @@ namespace Business.Sort.SortStrategy
 {
     public sealed class QuickSort : SortStrategyBase
     {
-        public QuickSort(ISortType sortType) : base(sortType)
-        { }
-
         protected override IEnumerable<decimal> HandleSorting(IList<decimal> sequence)
         {
             decimal[] copySequence = sequence.ToArray();
@@ -21,6 +18,9 @@ namespace Business.Sort.SortStrategy
 
             return copySequence;
         }
+
+        public QuickSort(ISortType sortType) : base(sortType)
+        { }
 
         private void RecursiveQuickSort(decimal[] sequence, int startIndex, int endIndex)
         {
@@ -48,6 +48,5 @@ namespace Business.Sort.SortStrategy
             this.Swap(sequence, markedIndex, endIndex);
             return markedIndex;
         }
-
     }
 }

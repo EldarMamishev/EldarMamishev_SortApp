@@ -10,9 +10,6 @@ namespace Business.Sort.SortStrategy
 {
     public sealed class InsertionSort : SortStrategyBase
     {
-        public InsertionSort(ISortType sortType) : base(sortType)
-        { }
-
         protected override IEnumerable<decimal> HandleSorting(IList<decimal> sequence)
         {
             decimal[] copySequence = sequence.ToArray();
@@ -30,5 +27,8 @@ namespace Business.Sort.SortStrategy
 
             return copySequence;
         }
+
+        public InsertionSort(ISortType sortType) : base(sortType)
+        { }
     }
 }
