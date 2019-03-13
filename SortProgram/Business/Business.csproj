@@ -60,6 +60,8 @@
     <Compile Include="Sort\SortStrategy\SelectionSort.cs" />
     <Compile Include="Sort\SortStrategy\StepCounter\Interface\IStepCounter.cs" />
     <Compile Include="Sort\SortStrategy\StepCounter\StepCounter.cs" />
+    <Compile Include="Sort\SortType\AscendingSortType.cs" />
+    <Compile Include="Sort\SortType\DescendingSortType.cs" />
     <Compile Include="Sort\SortType\Factory\Interface\ISortTypeFactory.cs" />
     <Compile Include="Sort\SortType\Interface\ISortType.cs" />
   </ItemGroup>
