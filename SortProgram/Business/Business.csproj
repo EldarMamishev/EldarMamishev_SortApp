@@ -50,6 +50,7 @@
     <Compile Include="Sort\Interface\ISortResult.cs" />
     <Compile Include="Sort\Parse\Interface\IStringToCollectionParser.cs" />
     <Compile Include="Sort\Parse\Interface\IStringValidator.cs" />
+    <Compile Include="Sort\SortStrategy\Factory\SortStrategyFactory.cs" />
     <Compile Include="Sort\SortStrategy\QuickSort.cs" />
     <Compile Include="Sort\SortResult.cs" />
     <Compile Include="Sort\SortStrategy\Base\SortStrategyBase.cs" />
