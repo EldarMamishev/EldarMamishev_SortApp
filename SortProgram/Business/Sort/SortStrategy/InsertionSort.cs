@@ -22,7 +22,7 @@ namespace Business.Sort.SortStrategy
                 for (int j = i; j > 0; j--)
                 {
                     if (this.CompareFirstBigger(copySequence[j - 1], copySequence[j]))
-                        Swap(copySequence, j, j - 1);
+                        this.Swap(copySequence, j, j - 1);
                     else
                         break;
                 }

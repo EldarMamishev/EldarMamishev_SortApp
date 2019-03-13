@@ -17,7 +17,7 @@ namespace Business.Sort.SortStrategy
         {
             decimal[] copySequence = sequence.ToArray();
 
-            RecursiveQuickSort(copySequence, 0, copySequence.Length);
+            this.RecursiveQuickSort(copySequence, 0, copySequence.Length);
 
             return copySequence;
         }
@@ -27,9 +27,9 @@ namespace Business.Sort.SortStrategy
             if (startIndex >= endIndex)
                 return;
 
-            int markedPosition = ReturnMarkedPosition(sequence, startIndex, endIndex);
-            RecursiveQuickSort(sequence, startIndex, markedPosition - 1);
-            RecursiveQuickSort(sequence, markedPosition + 1, endIndex);
+            int markedPosition = this.ReturnMarkedPosition(sequence, startIndex, endIndex);
+            this.RecursiveQuickSort(sequence, startIndex, markedPosition - 1);
+            this.RecursiveQuickSort(sequence, markedPosition + 1, endIndex);
         }
 
         private int ReturnMarkedPosition(decimal[] sequence, int startIndex, int endIndex)

@@ -16,7 +16,7 @@ namespace Business.Sort.SortStrategy
         protected override IEnumerable<decimal> HandleSorting(IList<decimal> sequence)
         {
             decimal[] copySequence = sequence.ToArray();
-            return RecursiveMergeSort(copySequence);
+            return this.RecursiveMergeSort(copySequence);
         }
 
         private decimal[] RecursiveMergeSort(decimal[] sequence)
@@ -41,9 +41,9 @@ namespace Business.Sort.SortStrategy
                 rightPart[i] = sequence[middleIndex + i];
             }
 
-            leftPart = RecursiveMergeSort(leftPart);
-            rightPart = RecursiveMergeSort(rightPart);
-            return Merge(leftPart, rightPart);
+            leftPart = this.RecursiveMergeSort(leftPart);
+            rightPart = this.RecursiveMergeSort(rightPart);
+            return this.Merge(leftPart, rightPart);
         }
 
         private decimal[] Merge(decimal[] leftPart, decimal[] rightPart)
@@ -56,7 +56,7 @@ namespace Business.Sort.SortStrategy
             {
                 if (leftIndex < leftPart.Length && rightIndex < rightPart.Length)
                 {
-                    if (CompareFirstBigger(leftPart[leftIndex], rightPart[rightIndex]))
+                    if (this.CompareFirstBigger(leftPart[leftIndex], rightPart[rightIndex]))
                     {
                         mergedSequence[i] = rightPart[rightIndex];
                         rightIndex++;

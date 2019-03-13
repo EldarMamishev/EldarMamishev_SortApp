@@ -23,11 +23,11 @@ namespace Business.Sort.SortStrategy
 
                 for (int j = i + 1; j < copySequence.Length; j++)
                 {
-                    if (CompareFirstBigger(copySequence[i], copySequence[j]))
+                    if (this.CompareFirstBigger(copySequence[i], copySequence[j]))
                         indexOfMin = j;
                 }
 
-                Swap(copySequence, i, indexOfMin);
+                this.Swap(copySequence, i, indexOfMin);
             }
 
             return copySequence;
