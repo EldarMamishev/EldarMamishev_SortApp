@@ -15,7 +15,7 @@ namespace Business.Sort.Parse
         {           
             string pattern = @"(\d+(\.\d+\s)?\s*)+";
 
-            if(Regex.IsMatch(sequence, pattern))
+            if (Regex.IsMatch(sequence, pattern))
                 throw new ValidationException(nameof(sequence));
         }
     }
