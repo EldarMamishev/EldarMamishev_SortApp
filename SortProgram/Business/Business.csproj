@@ -51,6 +51,7 @@
     <Compile Include="Sort\Parse\Exception\ValidationException.cs" />
     <Compile Include="Sort\Parse\Interface\IStringToCollectionParser.cs" />
     <Compile Include="Sort\Parse\Interface\IStringValidator.cs" />
+    <Compile Include="Sort\Parse\StringToDecimalCollectionParser.cs" />
     <Compile Include="Sort\Parse\StringToDecimalValidator.cs" />
     <Compile Include="Sort\SortStrategy\Factory\SortStrategyFactory.cs" />
     <Compile Include="Sort\SortStrategy\QuickSort.cs" />
