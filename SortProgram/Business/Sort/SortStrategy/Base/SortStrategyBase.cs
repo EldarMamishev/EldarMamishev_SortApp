@@ -37,12 +37,7 @@ namespace Business.Sort.SortStrategy.Base
 
         public SortStrategyBase(ISortType sortType)
         {
-            if (sortType == null)
-            {
-                throw new ArgumentNullException(nameof(sortType));
-            }
-
-            this.sortType = sortType;
+            this.sortType = sortType ?? throw new ArgumentNullException(nameof(sortType));
             this.stepCounter = new StepCounter.StepCounter();
         }
 
@@ -51,8 +46,13 @@ namespace Business.Sort.SortStrategy.Base
             decimal tempSequenceElement = sequence[firstIndex];
             sequence[firstIndex] = sequence[secondIndex];
             sequence[secondIndex] = tempSequenceElement;
+            stepCounter.CountSwapOperation();
         }
 
-        protected bool Compare(decimal firstNumber, decimal secondNumber) => firstNumber > secondNumber;
+        protected bool CompareFirstBigger(decimal greaterNumber, decimal smallerNumber)
+        {
+            stepCounter.CountCompareOperation();
+            return greaterNumber > smallerNumber;
+        }
     }
 }
