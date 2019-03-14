@@ -18,39 +18,22 @@ namespace ViewModel.Views
         private ISortHandler sortHandler;
         private IStringToCollectionParser<decimal> stringToCollectionParser;
         
-        public int CompareOperationsCount
-        {
-            get
-            {
-                return sortResult.CompareOperationsCount;
-            }
-        }
+        public int CompareOperationsCount => sortResult.CompareOperationsCount;
 
         public OutputControlsViewModel()
         {
-            sortHandler = new SortHandler();
-            stringToCollectionParser = new StringToDecimalCollectionParser();
+            this.sortHandler = new SortHandler();
+            this.stringToCollectionParser = new StringToDecimalCollectionParser();
         }
 
-        public string OutputSequence
-        {
-            get
-            {
-                return stringToCollectionParser.ParseCollectionToString(sortResult.SortedNumbers);
-            }
-        }
+        public string OutputSequence => this.stringToCollectionParser.ParseCollectionToString(this.sortResult.SortedNumbers);
 
-        public int SwapOperationsCount
-        {
-            get
-            {
-                return sortResult.SwapOperationsCount;
-            }
-        }               
+        public int SwapOperationsCount => this.sortResult.SwapOperationsCount;
 
         public void Sort(string sequence, SortAlgorithmEnum sortAlgorithm, SortTypeEnum sortType)
         {
-            sortResult = sortHandler.Handle(sequence, sortAlgorithm, sortType);
+            this.sortResult = this.sortHandler.Handle(sequence, sortAlgorithm, sortType);
+            this.OnPropertyChanged(string.Empty);
         }
     }
 }

@@ -15,42 +15,25 @@ namespace ViewModel.Views
         private SettingControlsViewModel settingControlsVM;
         private RelayCommand sortCommand;
 
-        public InputControlsViewModel InputControlsVM
-        {
-            get
-            {
-                return inputControlsVM ?? 
-                    (inputControlsVM = new InputControlsViewModel());
-            }
-        }
+        public InputControlsViewModel InputControlsVM => this.inputControlsVM ?? 
+                    (this.inputControlsVM = new InputControlsViewModel());
 
-        public OutputControlsViewModel OutputControlsVM
-        {
-            get
-            {
-                return outputControlsVM ??
-                    (outputControlsVM = new OutputControlsViewModel());
-            }
-        }
+        private void Execute() => 
+            this.OutputControlsVM.Sort(InputControlsVM.InputSequence, 
+                SettingControlsVM.SelectedSortAlgorithm, 
+                SettingControlsVM.SelectedSortType);
 
-        public SettingControlsViewModel SettingControlsVM
-        {
-            get
-            {
-                return settingControlsVM ??
-                    (settingControlsVM = new SettingControlsViewModel());
-            }
-        }
+        private bool CanExecute() => this.InputControlsVM.InputSequence.Length > 0;
 
-        private RelayCommand SortCommand
-        {
-            get
-            {
-                return sortCommand ?? 
-                    (sortCommand = new RelayCommand(
-                        obj => OutputControlsVM.Sort(InputControlsVM.InputSequence, SettingControlsVM.SelectedSortAlgorithm, SettingControlsVM.SelectedSortType), 
-                        obj => InputControlsVM.InputSequence.Length > 0));
-            }
-        }
+        public OutputControlsViewModel OutputControlsVM => this.outputControlsVM ??
+                    (this.outputControlsVM = new OutputControlsViewModel());
+
+        public SettingControlsViewModel SettingControlsVM => this.settingControlsVM ??
+                    (this.settingControlsVM = new SettingControlsViewModel());
+
+        private RelayCommand SortCommand => this.sortCommand ?? 
+                    (this.sortCommand = new RelayCommand(
+                        obj => this.Execute(), 
+                        obj => this.CanExecute()));
     }
 }
