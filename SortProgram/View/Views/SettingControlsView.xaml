@@ -11,7 +11,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <ListView Grid.Column="0" ItemsSource="{Binding SelectedSortAlgorithm}"/>
-        <ListView Grid.Column="1" ItemsSource="{Binding SelectedSortType}"/>
+        <ListView Grid.Column="0" ItemsSource="{Binding SortAlgorithms.Values}" SelectedItem="{Binding SelectedSortAlgorithm, Mode=OneWayToSource}"/>
+        <ListView Grid.Column="1" ItemsSource="{Binding SortTypes.Values}" SelectedItem="{Binding SelectedSortAlgorithm, Mode=OneWayToSource}"/>
     </Grid>
 </UserControl>
