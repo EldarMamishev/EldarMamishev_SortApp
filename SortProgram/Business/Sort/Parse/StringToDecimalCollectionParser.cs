@@ -11,18 +11,11 @@ namespace Business.Sort.Parse
     {
         public string ParseCollectionToString(IEnumerable<decimal> sequence)
         {
-            if(sequence == null)
+            if (sequence == null)
                 throw new ArgumentNullException(nameof(sequence));
 
             decimal[] copySequence = sequence.ToArray();
-            string stringSequence = "";
-
-            for (int i = 0; i < copySequence.Length - 1; i++)
-            {
-                stringSequence += copySequence[i] + " ";
-            }
-
-            stringSequence += copySequence.Last();
+            string stringSequence = string.Join(" ", copySequence);
 
             return stringSequence;
         }
