@@ -22,7 +22,7 @@ namespace View.Views
     {
         public SettingControlsView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

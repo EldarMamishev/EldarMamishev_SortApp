@@ -22,7 +22,7 @@ namespace View.Views
     {
         public OutputControlsView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

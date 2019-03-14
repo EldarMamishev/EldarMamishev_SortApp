@@ -6,9 +6,7 @@ using ViewModel.Base;
 namespace ViewModel.Views
 {
     public sealed class SettingControlsViewModel : ViewModelBase
-    {
-        //private KeyValuePair<string, SortAlgorithmEnum> selectedSortAlgorithm;
-        //private KeyValuePair<string, SortTypeEnum> selectedSortType;
+    {        
         private Dictionary<string, SortAlgorithmEnum> sortAlgorithms;
         private Dictionary<string, SortTypeEnum> sortTypes;
 
@@ -40,32 +38,6 @@ namespace ViewModel.Views
                 this.OnPropertyChanged(nameof(this.SelectedSortType));
             }
         }
-
-        //public KeyValuePair<string, SortAlgorithmEnum> SelectedSortAlgorithm
-        //{
-        //    get
-        //    {
-        //        return this.selectedSortAlgorithm;
-        //    }
-        //    set
-        //    {
-        //        this.selectedSortAlgorithm = value;
-        //        this.OnPropertyChanged(nameof(this.SelectedSortAlgorithm));
-        //    }
-        //}
-
-        //public KeyValuePair<string, SortTypeEnum> SelectedSortType
-        //{
-        //    get
-        //    {
-        //        return this.selectedSortType;
-        //    }
-        //    set
-        //    {
-        //        this.selectedSortType = value;
-        //        this.OnPropertyChanged(nameof(this.SelectedSortType));
-        //    }
-        //}
 
         public SettingControlsViewModel()
         {

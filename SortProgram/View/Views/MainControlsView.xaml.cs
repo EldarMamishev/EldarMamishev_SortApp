@@ -23,7 +23,7 @@ namespace View.Views
     {
         public MainControlsView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

@@ -22,7 +22,7 @@ namespace View.Views
     {
         public InputControlsView()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }
