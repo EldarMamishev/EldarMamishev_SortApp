@@ -21,10 +21,6 @@ namespace View.Views
     /// </summary>
     public partial class MainControlsView : UserControl
     {
-        private MainControlsViewModel mainControlsVM;
-        public MainControlsViewModel MainControlsVM => this.mainControlsVM ?? 
-            (this.mainControlsVM = new MainControlsViewModel());
-
         public MainControlsView()
         {
             InitializeComponent();

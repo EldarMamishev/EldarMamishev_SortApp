@@ -11,7 +11,7 @@ namespace ViewModel.Views
         {
             get
             {
-                return this.inputSequence;
+                return this.inputSequence ?? (inputSequence = string.Empty);
             }
             set
             {

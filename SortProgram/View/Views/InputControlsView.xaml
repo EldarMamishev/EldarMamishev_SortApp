@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:View.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid DataContext="{Binding InputControlsVM}">
+    <Grid>
         <TextBox Text="{Binding InputSequence, Mode=TwoWay}"/>
     </Grid>
 </UserControl>

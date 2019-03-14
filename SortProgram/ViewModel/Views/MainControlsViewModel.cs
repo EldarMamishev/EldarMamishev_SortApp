@@ -31,9 +31,8 @@ namespace ViewModel.Views
         public SettingControlsViewModel SettingControlsVM => this.settingControlsVM ??
                     (this.settingControlsVM = new SettingControlsViewModel());
 
-        private RelayCommand SortCommand => this.sortCommand ?? 
+        public RelayCommand SortCommand => this.sortCommand ?? 
                     (this.sortCommand = new RelayCommand(
-                        obj => this.Execute(), 
-                        obj => this.CanExecute()));
+                        obj => this.Execute()));
     }
 }
