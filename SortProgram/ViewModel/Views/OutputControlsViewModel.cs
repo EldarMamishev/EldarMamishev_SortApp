@@ -21,7 +21,6 @@ namespace ViewModel.Views
         private int swapOperationsCount;
         private int compareOperationsCount;
 
-
         public int CompareOperationsCount => this.compareOperationsCount;
 
         public OutputControlsViewModel()

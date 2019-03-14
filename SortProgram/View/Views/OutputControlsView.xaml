@@ -22,6 +22,5 @@
             <TextBlock Grid.Column="0" Text="{Binding SwapOperationsCount}"/>
             <TextBlock Grid.Column="1" Text="{Binding CompareOperationsCount}"/>
         </Grid>
-
     </Grid>
 </UserControl>

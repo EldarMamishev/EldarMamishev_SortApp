@@ -48,7 +48,7 @@ namespace ViewModel.Views
                 sortAlgorithms.Add(sort.ToString(), sort);
             }
 
-            foreach (SortTypeEnum sort in Enum.GetValues(typeof(SortTypeEnum)))
+            foreach(SortTypeEnum sort in Enum.GetValues(typeof(SortTypeEnum)))
             {
                 sortTypes.Add(sort.ToString(), sort);
             }
@@ -57,6 +57,5 @@ namespace ViewModel.Views
         public Dictionary<string, SortAlgorithmEnum> SortAlgorithms => this.sortAlgorithms;
 
         public Dictionary<string, SortTypeEnum> SortTypes => this.sortTypes;
-
     }
 }
