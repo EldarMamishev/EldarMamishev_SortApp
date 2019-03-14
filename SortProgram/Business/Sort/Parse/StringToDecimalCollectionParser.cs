@@ -11,6 +11,9 @@ namespace Business.Sort.Parse
     {
         public string ParseCollectionToString(IEnumerable<decimal> sequence)
         {
+            if(sequence == null)
+                throw new ArgumentNullException(nameof(sequence));
+
             decimal[] copySequence = sequence.ToArray();
             string stringSequence = "";
 
@@ -26,6 +29,9 @@ namespace Business.Sort.Parse
 
         public IEnumerable<decimal> ParseStringToCollection(string sequence)
         {
+            if (sequence == null)
+                throw new ArgumentNullException(nameof(sequence));
+
             IStringValidator stringValidator = new StringToDecimalValidator();
             stringValidator.Validate(sequence);
             decimal[] arraySequence = sequence.Split(' ', '\t', '\n').Where(x => !string.IsNullOrWhiteSpace(x)).Select(x => decimal.Parse(x)).ToArray();
