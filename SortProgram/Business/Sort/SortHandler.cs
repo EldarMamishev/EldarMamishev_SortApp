@@ -19,8 +19,8 @@ namespace Business.Sort
 
         public SortHandler()
         {
-            sortStrategyFactory = new SortStrategyFactory();
-            stringToDecimalCollectionParser = new StringToDecimalCollectionParser();
+            this.sortStrategyFactory = new SortStrategyFactory();
+            this.stringToDecimalCollectionParser = new StringToDecimalCollectionParser();
         }
 
         public ISortResult Handle(string sequence, SortAlgorithmEnum sortAlgorithm, SortTypeEnum sortType)
