@@ -11,12 +11,25 @@ namespace Business.Sort.Parse
     {
         public string ParseCollectionToString(IEnumerable<decimal> sequence)
         {
-            throw new NotImplementedException();
+            if (sequence == null)
+                throw new ArgumentNullException(nameof(sequence));
+
+            decimal[] copySequence = sequence.ToArray();
+            string stringSequence = string.Join(" ", copySequence);
+
+            return stringSequence;
         }
 
         public IEnumerable<decimal> ParseStringToCollection(string sequence)
         {
-            throw new NotImplementedException();
+            if (sequence == null)
+                throw new ArgumentNullException(nameof(sequence));
+
+            IStringValidator stringValidator = new StringToDecimalValidator();
+            stringValidator.Validate(sequence);
+            decimal[] arraySequence = sequence.Split(' ', '\t', '\n').Where(x => !string.IsNullOrWhiteSpace(x)).Select(x => decimal.Parse(x)).ToArray();
+
+            return arraySequence;
         }
     }
 }
