@@ -22,18 +22,11 @@ namespace View.Views
     public partial class MainControlsView : UserControl
     {
         private MainControlsViewModel mainControlsVM;
-        public MainControlsViewModel MainControlsVM
-        {
-            get
-            {
-                return mainControlsVM ?? 
-                    (mainControlsVM = new MainControlsViewModel());
-            }
-        }
+        public MainControlsViewModel MainControlsVM => this.mainControlsVM ?? 
+            (this.mainControlsVM = new MainControlsViewModel());
 
         public MainControlsView()
         {
-
             InitializeComponent();
         }
     }
