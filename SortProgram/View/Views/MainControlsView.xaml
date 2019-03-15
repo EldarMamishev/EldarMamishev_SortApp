@@ -25,7 +25,7 @@
                 <ColumnDefinition Width="20*"/>
             </Grid.ColumnDefinitions>
             <local:InputControlsView Grid.Column="0" DataContext="{Binding InputControlsVM}"/>
-            <GridSplitter Grid.Column="2" Margin="0,0,77,0" Width="0"></GridSplitter>
+            <GridSplitter Grid.Column="2" Margin="0,0,77,0" Width="0"/>
             <Button Grid.Column="2" MaxHeight="30" MaxWidth="100" Command="{Binding SortCommand}" Content="Sort"/>
         </Grid>
 

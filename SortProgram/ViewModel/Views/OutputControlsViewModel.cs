@@ -20,15 +20,7 @@ namespace ViewModel.Views
         private IStringToCollectionParser<decimal> stringToCollectionParser;
         private string errorMessage;
         
-        public int? CompareOperationsCount
-        {
-            get
-            {
-                if (sortResult == null)
-                    return null;
-                return this.sortResult.CompareOperationsCount;
-            }
-        }
+        public int? CompareOperationsCount => this.sortResult?.CompareOperationsCount;
 
         public string ErrorMessage => errorMessage ?? string.Empty;
 
@@ -42,7 +34,7 @@ namespace ViewModel.Views
         {
             get
             {
-                if(sortResult == null)
+                if (sortResult == null)
                     return string.Empty;
                 return this.stringToCollectionParser.ParseCollectionToString(this.sortResult.SortedNumbers);
             }
@@ -71,14 +63,6 @@ namespace ViewModel.Views
             this.OnPropertyChanged(string.Empty);
         }
 
-        public int? SwapOperationsCount
-        {
-            get
-            {
-                if (sortResult == null)
-                    return null;
-                return this.sortResult.SwapOperationsCount;
-            }
-        }
+        public int? SwapOperationsCount => this.sortResult?.SwapOperationsCount;
     }
 }

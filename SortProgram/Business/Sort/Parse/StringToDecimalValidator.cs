@@ -13,7 +13,7 @@ namespace Business.Sort.Parse
     {
         public void Validate(string sequence)
         {           
-            string pattern = @"(\d+(\.\d+\s)?\s*)+";
+            string pattern = @"^((\d+(\.\d+(\s|$))?\s*)+)$";
 
             if (!Regex.IsMatch(sequence, pattern))
                 throw new ValidationException(nameof(sequence));

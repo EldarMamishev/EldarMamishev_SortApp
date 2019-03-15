@@ -43,12 +43,12 @@ namespace ViewModel.Views
         {
             sortAlgorithms = new Dictionary<string, SortAlgorithmEnum>();
             sortTypes = new Dictionary<string, SortTypeEnum>();
-            foreach(SortAlgorithmEnum sort in Enum.GetValues(typeof(SortAlgorithmEnum)))
+            foreach (SortAlgorithmEnum sort in Enum.GetValues(typeof(SortAlgorithmEnum)))
             {
                 sortAlgorithms.Add(sort.ToString(), sort);
             }
 
-            foreach(SortTypeEnum sort in Enum.GetValues(typeof(SortTypeEnum)))
+            foreach (SortTypeEnum sort in Enum.GetValues(typeof(SortTypeEnum)))
             {
                 sortTypes.Add(sort.ToString(), sort);
             }

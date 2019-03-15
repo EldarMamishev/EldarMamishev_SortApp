@@ -23,8 +23,6 @@ namespace ViewModel.Views
                 SettingControlsVM.SelectedSortAlgorithm, 
                 SettingControlsVM.SelectedSortType);
 
-        private bool CanExecute() => this.InputControlsVM.InputSequence.Length > 0;
-
         public OutputControlsViewModel OutputControlsVM => this.outputControlsVM ??
                     (this.outputControlsVM = new OutputControlsViewModel());
 
