@@ -11,7 +11,7 @@ namespace Business.UnitTest.Sort.Parse
     public class StringToDecimalValidatorTest
     {
         [TestMethod]
-        public void StringToDecimalValidator_Validate_SetNull_ThrowsArgumentNullException()
+        public void StringToDecimalValidator_Validate_SequenceNull_ThrowsArgumentNullException()
         {
             var validator = new StringToDecimalValidator();
 
@@ -19,7 +19,7 @@ namespace Business.UnitTest.Sort.Parse
         }
 
         [TestMethod]
-        public void StringToDecimalValidator_Validate_SetEmptyString_ThrowsValidationException()
+        public void StringToDecimalValidator_Validate_SequenceEmptyString_ThrowsValidationException()
         {
             var validator = new StringToDecimalValidator();
 
@@ -27,15 +27,15 @@ namespace Business.UnitTest.Sort.Parse
         }
 
         [TestMethod]
-        public void StringToDecimalValidator_Validate_SetStringWithLetters_ThrowsValidationException()
+        public void StringToDecimalValidator_Validate_SequenceWithLetters_ThrowsValidationException()
         {
             var validator = new StringToDecimalValidator();
 
-            Assert.ThrowsException<ValidationException>(() => validator.Validate("a"));
+            Assert.ThrowsException<ValidationException>(() => validator.Validate("1 a"));
         }
 
         [TestMethod]
-        public void StringToDecimalValidator_Validate_SetUnsupportedCharacters_ThrowsValidationException()
+        public void StringToDecimalValidator_Validate_SequenceWithUnsupportedCharacters_ThrowsValidationException()
         {
             var validator = new StringToDecimalValidator();
 
@@ -43,15 +43,7 @@ namespace Business.UnitTest.Sort.Parse
         }
 
         [TestMethod]
-        public void StringToDecimalValidator_Validate_SetOnlyADot_ThrowsValidationException()
-        {
-            var validator = new StringToDecimalValidator();
-
-            Assert.ThrowsException<ValidationException>(() => validator.Validate("."));
-        }
-
-        [TestMethod]
-        public void StringToDecimalValidator_Validate_SetNumberStartingWithDot_ThrowsValidationException()
+        public void StringToDecimalValidator_Validate_SequenceOfNumberStartingWithDot_ThrowsValidationException()
         {
             var validator = new StringToDecimalValidator();
 
@@ -59,7 +51,7 @@ namespace Business.UnitTest.Sort.Parse
         }
 
         [TestMethod]
-        public void StringToDecimalValidator_Validate_SetNumberEndingWithDot_ThrowsValidationException()
+        public void StringToDecimalValidator_Validate_SequenceOfNumberEndingWithDot_ThrowsValidationException()
         {
             var validator = new StringToDecimalValidator();
 
@@ -67,7 +59,7 @@ namespace Business.UnitTest.Sort.Parse
         }
 
         [TestMethod]
-        public void StringToDecimalValidator_Validate_SetWhiteSpaces_ThrowsValidationException()
+        public void StringToDecimalValidator_Validate_SequenceOfWhiteSpaces_ThrowsValidationException()
         {
             var validator = new StringToDecimalValidator();
 
@@ -75,7 +67,7 @@ namespace Business.UnitTest.Sort.Parse
         }
 
         [TestMethod]
-        public void StringToDecimalValidator_Validate_SetNumberWithTwoDots_ThrowsValidationException()
+        public void StringToDecimalValidator_Validate_SequenceOfNumberWithTwoDots_ThrowsValidationException()
         {
             var validator = new StringToDecimalValidator();
 
@@ -83,7 +75,7 @@ namespace Business.UnitTest.Sort.Parse
         }
 
         [TestMethod]
-        public void StringToDecimalValidator_Validate_SetNumber_Success()
+        public void StringToDecimalValidator_Validate_SequenceOfNumber_Success()
         {
             var validator = new StringToDecimalValidator();
 
@@ -91,7 +83,7 @@ namespace Business.UnitTest.Sort.Parse
         }
 
         [TestMethod]
-        public void StringToDecimalValidator_Validate_SetNumberWithDot_Success()
+        public void StringToDecimalValidator_Validate_SequenceOfNumberWithDot_Success()
         {
             var validator = new StringToDecimalValidator();
 
