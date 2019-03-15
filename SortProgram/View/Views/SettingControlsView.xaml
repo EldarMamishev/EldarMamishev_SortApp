@@ -11,14 +11,14 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <ListView Grid.Column="0" ItemsSource="{Binding SortAlgorithms.Values}" SelectedItem="{Binding SelectedSortAlgorithm, Mode=OneWayToSource}">
+        <ListView Grid.Column="0" SelectedIndex="0" ItemsSource="{Binding SortAlgorithms.Values}" SelectedItem="{Binding SelectedSortAlgorithm, Mode=OneWayToSource}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn>Sorting algorithm</GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
-        <ListView Grid.Column="1" ItemsSource="{Binding SortTypes.Values}" SelectedItem="{Binding SelectedSortType, Mode=OneWayToSource}">
+        <ListView Grid.Column="1" SelectedIndex="0" ItemsSource="{Binding SortTypes.Values}" SelectedItem="{Binding SelectedSortType, Mode=OneWayToSource}">
             <ListView.View>
                 <GridView>
                     <GridViewColumn>Sort type</GridViewColumn>
