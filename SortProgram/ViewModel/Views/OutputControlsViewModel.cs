@@ -47,17 +47,9 @@ namespace ViewModel.Views
                 this.errorMessage = string.Empty;
                 this.sortResult = this.sortHandler.Handle(sequence, sortAlgorithm, sortType); 
             }
-            catch(NullReferenceException)
-            {
-                errorMessage = "Field was empty";
-            }
-            catch(ValidationException)
+            catch (ValidationException)
             {
                 errorMessage = "Not validating sequence";
-            }
-            catch(Exception)
-            {
-                errorMessage = "Error!";
             }
 
             this.OnPropertyChanged(string.Empty);
