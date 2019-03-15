@@ -8,17 +8,19 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="100*"/>
+            <ColumnDefinition Width="50*"/>
+            <ColumnDefinition Width="100*"/>
         </Grid.ColumnDefinitions>
-        <ListView Grid.Column="0" SelectedIndex="0" ItemsSource="{Binding SortAlgorithms.Values}" SelectedItem="{Binding SelectedSortAlgorithm, Mode=OneWayToSource}">
+        <ListView Grid.Column="0" SelectedIndex="0" ItemsSource="{Binding SortAlgorithms.Values}" SelectedItem="{Binding SelectedSortAlgorithm, Mode=OneWayToSource}" MinHeight="120" MaxHeight="200" MinWidth="100" MaxWidth="300">
             <ListView.View>
                 <GridView>
                     <GridViewColumn>Sorting algorithm</GridViewColumn>
                 </GridView>
             </ListView.View>
         </ListView>
-        <ListView Grid.Column="1" SelectedIndex="0" ItemsSource="{Binding SortTypes.Values}" SelectedItem="{Binding SelectedSortType, Mode=OneWayToSource}">
+        <GridSplitter Grid.Column="1"/>
+        <ListView Grid.Column="2" SelectedIndex="0" ItemsSource="{Binding SortTypes.Values}" SelectedItem="{Binding SelectedSortType, Mode=OneWayToSource}" MinHeight="120" MaxHeight="200" Width="Auto" MinWidth="100" MaxWidth="300">
             <ListView.View>
                 <GridView>
                     <GridViewColumn>Sort type</GridViewColumn>

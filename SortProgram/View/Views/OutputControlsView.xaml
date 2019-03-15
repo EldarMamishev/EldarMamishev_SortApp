@@ -8,19 +8,41 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*" MinHeight="20"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        
-        <TextBlock TextWrapping="Wrap" TextAlignment="Center" Grid.Row="0" Text="{Binding OutputSequence}"/>
-        <Grid Grid.Row="1">
+        <TextBlock Grid.Row="0" Text="{Binding ErrorMessage, Mode=OneWay}">
+            <TextBlock.Foreground>
+                <SolidColorBrush Color="Red"/>
+            </TextBlock.Foreground>
+
+        </TextBlock>
+
+        <Grid Grid.Row="1" Height="Auto">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto" MinWidth="120"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Column="0" MaxHeight="100" Content="Sorted sequence:"/>
+            <TextBox Grid.Column="1" IsReadOnly="True" TextWrapping="Wrap" Text="{Binding OutputSequence, Mode=OneWay}" MinHeight="60" Height="Auto" MinWidth="100" MaxHeight="100" MaxWidth="500"/>
+        </Grid>
+        <GridSplitter Grid.Row="2"/>
+        <Grid Grid.Row="3">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Column="0" Text="{Binding SwapOperationsCount}"/>
-            <TextBlock Grid.Column="1" Text="{Binding CompareOperationsCount}"/>
+            <Label Grid.Column="0" Content="Swap operations count:" MaxHeight="30"/>
+            <TextBox Grid.Column="1" IsReadOnly="True" Text="{Binding SwapOperationsCount, Mode=OneWay}" MinWidth="50" MaxWidth="100" MaxHeight="30"/>
+            <GridSplitter Grid.Column="2"/>
+            <Label Grid.Column="3" Content="Compare operations count:" MaxHeight="30"/>
+            <TextBox Grid.Column="4" IsReadOnly="True" Text="{Binding CompareOperationsCount, Mode=OneWay}" MinWidth="50" MaxWidth="100" MaxHeight="30"/>
         </Grid>
     </Grid>
 </UserControl>

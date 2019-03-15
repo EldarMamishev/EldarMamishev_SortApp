@@ -9,11 +9,11 @@
              d:DesignHeight="315" Width="511">
     <Grid RenderTransformOrigin="0.595,0.482" Margin="0,0,0,21">
         <Grid.RowDefinitions>
-            <RowDefinition Height="200*"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="20*"/>
-            <RowDefinition Height="100*"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="20*"/>
-            <RowDefinition Height="100*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <local:SettingControlsView Grid.Row="0" DataContext="{Binding SettingControlsVM}"/>
@@ -26,7 +26,7 @@
             </Grid.ColumnDefinitions>
             <local:InputControlsView Grid.Column="0" DataContext="{Binding InputControlsVM}"/>
             <GridSplitter Grid.Column="2" Margin="0,0,77,0" Width="0"></GridSplitter>
-            <Button Grid.Column="2" Command="{Binding SortCommand}"/>
+            <Button Grid.Column="2" MaxHeight="30" MaxWidth="100" Command="{Binding SortCommand}" Content="Sort"/>
         </Grid>
 
         <local:OutputControlsView Grid.Row="4" DataContext="{Binding OutputControlsVM}"/>
