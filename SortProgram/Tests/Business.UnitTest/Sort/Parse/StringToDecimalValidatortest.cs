@@ -81,5 +81,21 @@ namespace Business.UnitTest.Sort.Parse
 
             Assert.ThrowsException<ValidationException>(() => validator.Validate("1.1."));
         }
-    }
+
+        [TestMethod]
+        public void StringToDecimalValidator_Validate_SetNumber_Success()
+        {
+            var validator = new StringToDecimalValidator();
+
+           validator.Validate("1");
+        }
+
+        [TestMethod]
+        public void StringToDecimalValidator_Validate_SetNumberWithDot_Success()
+        {
+            var validator = new StringToDecimalValidator();
+
+            validator.Validate("1.1");
+        }
+    }   
 }
