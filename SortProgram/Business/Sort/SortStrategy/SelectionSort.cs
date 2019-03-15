@@ -20,7 +20,7 @@ namespace Business.Sort.SortStrategy
 
                 for (int j = i + 1; j < copySequence.Length; j++)
                 {
-                    if (this.CompareFirstBigger(copySequence[i], copySequence[j]))
+                    if (this.CompareFirstBigger(copySequence[indexOfMin], copySequence[j]))
                         indexOfMin = j;
                 }
 

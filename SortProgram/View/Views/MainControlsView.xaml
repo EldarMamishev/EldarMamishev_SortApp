@@ -7,7 +7,7 @@
              xmlns:vm="clr-namespace:ViewModel.Views;assembly=ViewModel"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
+    <Grid RenderTransformOrigin="0.595,0.482">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -21,8 +21,8 @@
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <local:InputControlsView Grid.Column="0" DataContext="{Binding InputControlsVM}"/>
-            <Button Grid.Column="1" Command="{Binding SortCommand}"/>
+            <local:InputControlsView Grid.Column="0" DataContext="{Binding InputControlsVM}" Grid.ColumnSpan="2" Margin="0,0,167,0"/>
+            <Button Grid.Column="1" Command="{Binding SortCommand}" Margin="233,0,0,0"/>
         </Grid>
         
         <local:OutputControlsView Grid.Row="2" DataContext="{Binding OutputControlsVM}"/>

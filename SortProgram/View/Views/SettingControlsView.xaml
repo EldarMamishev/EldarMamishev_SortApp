@@ -18,6 +18,6 @@
                 </GridView>
             </ListView.View>
         </ListView>
-        <ListView Grid.Column="1" ItemsSource="{Binding SortTypes.Values}" SelectedItem="{Binding SelectedSortAlgorithm, Mode=OneWayToSource}"/>
+        <ListView Grid.Column="1" ItemsSource="{Binding SortTypes.Values}" SelectedItem="{Binding SelectedSortType, Mode=OneWayToSource}"/>
     </Grid>
 </UserControl>
