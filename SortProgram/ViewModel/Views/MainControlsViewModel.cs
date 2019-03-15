@@ -23,17 +23,14 @@ namespace ViewModel.Views
                 SettingControlsVM.SelectedSortAlgorithm, 
                 SettingControlsVM.SelectedSortType);
 
-        private bool CanExecute() => this.InputControlsVM.InputSequence.Length > 0;
-
         public OutputControlsViewModel OutputControlsVM => this.outputControlsVM ??
                     (this.outputControlsVM = new OutputControlsViewModel());
 
         public SettingControlsViewModel SettingControlsVM => this.settingControlsVM ??
                     (this.settingControlsVM = new SettingControlsViewModel());
 
-        private RelayCommand SortCommand => this.sortCommand ?? 
+        public RelayCommand SortCommand => this.sortCommand ?? 
                     (this.sortCommand = new RelayCommand(
-                        obj => this.Execute(), 
-                        obj => this.CanExecute()));
+                        obj => this.Execute()));
     }
 }

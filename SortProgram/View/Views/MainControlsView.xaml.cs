@@ -14,18 +14,16 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ViewModel.Views;
 
-namespace View
+namespace View.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for MainControlsView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class MainControlsView : UserControl
     {
-        public MainWindow()
+        public MainControlsView()
         {
             this.InitializeComponent();
-
-            this.DataContext = new MainControlsViewModel();
         }
     }
 }

@@ -1,0 +1,34 @@
+﻿<UserControl x:Class="View.Views.MainControlsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:View.Views"
+             xmlns:vm="clr-namespace:ViewModel.Views;assembly=ViewModel"
+             mc:Ignorable="d" 
+             d:DesignHeight="315" Width="511">
+    <Grid RenderTransformOrigin="0.595,0.482" Margin="0,0,0,21">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="20*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <local:SettingControlsView Grid.Row="0" DataContext="{Binding SettingControlsVM}"/>
+
+        <Grid Grid.Row="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100*"/>
+                <ColumnDefinition Width="5*"/>
+                <ColumnDefinition Width="20*"/>
+            </Grid.ColumnDefinitions>
+            <local:InputControlsView Grid.Column="0" DataContext="{Binding InputControlsVM}"/>
+            <GridSplitter Grid.Column="2" Margin="0,0,77,0" Width="0"/>
+            <Button Grid.Column="2" MaxHeight="30" MaxWidth="100" Command="{Binding SortCommand}" Content="Sort"/>
+        </Grid>
+
+        <local:OutputControlsView Grid.Row="4" DataContext="{Binding OutputControlsVM}"/>
+    </Grid>
+</UserControl>

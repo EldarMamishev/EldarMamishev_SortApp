@@ -12,20 +12,17 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using ViewModel.Views;
 
-namespace View
+namespace View.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for OutputControlsView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class OutputControlsView : UserControl
     {
-        public MainWindow()
+        public OutputControlsView()
         {
             this.InitializeComponent();
-
-            this.DataContext = new MainControlsViewModel();
         }
     }
 }
