@@ -9,6 +9,7 @@ using Business.Sort.Parse;
 using Business.Sort.Parse.Interface;
 using Business.Sort.SortStrategy.Factory;
 using Business.Sort.SortStrategy.Factory.Interface;
+using Business.Sort.SortStrategy.StepCounter.Interface;
 
 namespace Business.Sort
 {
@@ -16,20 +17,19 @@ namespace Business.Sort
     {
         private ISortStrategyFactory sortStrategyFactory;
         private IStringToCollectionParser<decimal> stringToDecimalCollectionParser;
-        public IStringValidator stringValidator;
 
 
-        public SortHandler()
+        public SortHandler(IStringToCollectionParser<decimal> stringParser, ISortStrategyFactory sortStrategyFactory)
         {
-            this.sortStrategyFactory = new SortStrategyFactory();
-            this.stringToDecimalCollectionParser = new StringToDecimalCollectionParser(this.stringValidator);
+            this.sortStrategyFactory = sortStrategyFactory;
+            this.stringToDecimalCollectionParser = stringParser;
         }
 
-        public ISortResult Handle(string sequence, SortAlgorithmEnum sortAlgorithm, SortTypeEnum sortType)
+        public ISortResult Handle(string sequence, SortAlgorithmEnum sortAlgorithm, SortTypeEnum sortType, IStepCounter stepCounter)
         {
-            IEnumerable<decimal> numbersSequence = stringToDecimalCollectionParser.ParseStringToCollection(sequence);            
+            IEnumerable<decimal> numbersSequence = this.stringToDecimalCollectionParser.ParseStringToCollection(sequence);            
 
-            ISortResult sortResult = sortStrategyFactory.CreateSort(sortAlgorithm, sortType).Sort(numbersSequence);
+            ISortResult sortResult = this.sortStrategyFactory.CreateSort(sortAlgorithm, sortType, stepCounter).Sort(numbersSequence);
 
             return sortResult;
         }

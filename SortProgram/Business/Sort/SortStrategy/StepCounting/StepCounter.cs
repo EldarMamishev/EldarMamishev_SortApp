@@ -7,7 +7,7 @@ using Business.Sort.SortStrategy.StepCounter.Interface;
 
 namespace Business.Sort.SortStrategy.StepCounter
 {
-    public class StepCounter : IStepCounter
+    class StepCounter : IStepCounter
     {
         private int compareOperationsCount;
         private int swapOperationsCount;

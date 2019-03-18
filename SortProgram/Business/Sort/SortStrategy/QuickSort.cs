@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Business.Sort.SortStrategy.Base;
+using Business.Sort.SortStrategy.StepCounter.Interface;
 using Business.Sort.SortType.Interface;
 
 namespace Business.Sort.SortStrategy
@@ -19,7 +20,7 @@ namespace Business.Sort.SortStrategy
             return copySequence;
         }
 
-        public QuickSort(ISortType sortType) : base(sortType)
+        public QuickSort(ISortType sortType, IStepCounter stepCounter) : base(sortType, stepCounter)
         { }
 
         private void RecursiveQuickSort(decimal[] sequence, int startIndex, int endIndex)

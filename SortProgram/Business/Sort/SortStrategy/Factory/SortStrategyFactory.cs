@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Business.Sort.Enum;
 using Business.Sort.SortStrategy.Factory.Interface;
 using Business.Sort.SortStrategy.Interface;
+using Business.Sort.SortStrategy.StepCounter.Interface;
 using Business.Sort.SortType.Factory;
 using Business.Sort.SortType.Factory.Interface;
 using Business.Sort.SortType.Interface;
@@ -16,27 +17,32 @@ namespace Business.Sort.SortStrategy.Factory
     {
         private ISortTypeFactory sortTypeFactory;
 
-        public ISortStrategy CreateSort(SortAlgorithmEnum sortAlgorithm, SortTypeEnum sortType)
+        public SortStrategyFactory(ISortTypeFactory sortTypeFactory)
         {
-            sortTypeFactory = new SortTypeFactory();
-            ISortType neededSortType = sortTypeFactory.CreateSortType(sortType);
+            this.sortTypeFactory = sortTypeFactory;
+        }
+
+        public ISortStrategy CreateSort(SortAlgorithmEnum sortAlgorithm, SortTypeEnum sortType, IStepCounter stepCounter)
+        {
+            ISortType neededSortType = this.sortTypeFactory.CreateSortType(sortType);
+
             switch (sortAlgorithm)
             {
                 case SortAlgorithmEnum.InsertionSort:
                 {
-                    return new InsertionSort(neededSortType);
+                    return new InsertionSort(neededSortType, stepCounter);
                 }
                 case SortAlgorithmEnum.MergeSort:
                 {
-                    return new MergeSort(neededSortType);
+                    return new MergeSort(neededSortType, stepCounter);
                 }
                 case SortAlgorithmEnum.QuickSort:
                 {
-                    return new QuickSort(neededSortType);
+                    return new QuickSort(neededSortType, stepCounter);
                 }
                 case SortAlgorithmEnum.SelectionSort:
                 {
-                    return new SelectionSort(neededSortType);
+                    return new SelectionSort(neededSortType, stepCounter);
                 }
                 default:
                     return null;

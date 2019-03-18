@@ -35,10 +35,10 @@ namespace Business.Sort.SortStrategy.Base
             return sortResult;
         }
 
-        public SortStrategyBase(ISortType sortType)
+        public SortStrategyBase(ISortType sortType, IStepCounter stepCounter)
         {
             this.sortType = sortType ?? throw new ArgumentNullException(nameof(sortType));
-            this.stepCounter = new StepCounter.StepCounter();
+            this.stepCounter = stepCounter;
         }
 
         protected void Swap(IList<decimal> sequence, int firstIndex, int secondIndex)
