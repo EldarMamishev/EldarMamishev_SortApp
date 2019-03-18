@@ -21,13 +21,12 @@ namespace Business.UnitTest.Sort.SortStrategy.Factory
         {
             ISortTypeFactory sortTypeFactory = new Business.Sort.SortType.Factory.Interface.Fakes.StubISortTypeFactory()
             {
-                CreateSortTypeSortTypeEnum = (sortTypeEnum) => {
-                    return new Business.Sort.SortType.Interface.Fakes.StubISortType()
+                CreateSortTypeSortTypeEnum = (sortTypeEnum) => 
+                    new Business.Sort.SortType.Interface.Fakes.StubISortType()
                     {
                         UpdateIEnumerableOfDecimal = (notUpdatedSequence) => { return notUpdatedSequence; }
 
-                    };
-                }
+                    }                
             };
 
             return sortTypeFactory;

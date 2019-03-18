@@ -58,6 +58,16 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Sort\Parse\StringToDecimalCollectionParserTest.cs" />
     <Compile Include="Sort\Parse\StringToDecimalValidatorTest.cs" />
+    <Compile Include="Sort\SortStrategy\Base\SortStrategyBaseTest.cs" />
+    <Compile Include="Sort\SortStrategy\Factory\SortStrategyFactoryTest.cs" />
+    <Compile Include="Sort\SortStrategy\InsertionSortTest.cs" />
+    <Compile Include="Sort\SortStrategy\MergeSortTest.cs" />
+    <Compile Include="Sort\SortStrategy\QuickSortTest.cs" />
+    <Compile Include="Sort\SortStrategy\SelectionSortTest.cs" />
+    <Compile Include="Sort\SortStrategy\StepCounter\StepCounterTest.cs" />
+    <Compile Include="Sort\SortType\AscendingSortTypeTest.cs" />
+    <Compile Include="Sort\SortType\DescendingSortTypeTest.cs" />
+    <Compile Include="Sort\SortType\Factory\SortTypeFactoryTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <Fakes Include="Fakes\Business.fakes" />

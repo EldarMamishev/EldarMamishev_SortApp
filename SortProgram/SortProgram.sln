@@ -13,7 +13,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{364D6B45
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business.UnitTest", "Tests\Business.UnitTest\Business.UnitTest.csproj", "{9488C68D-B640-4009-91F2-EF5C0C051A73}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModel.UnitTest", "ViewModel.UnitTest\ViewModel.UnitTest.csproj", "{22939A50-4B62-4BEB-AB42-2249237020C9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ViewModel.UnitTest", "Tests\ViewModel.UnitTest\ViewModel.UnitTest.csproj", "{22939A50-4B62-4BEB-AB42-2249237020C9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
