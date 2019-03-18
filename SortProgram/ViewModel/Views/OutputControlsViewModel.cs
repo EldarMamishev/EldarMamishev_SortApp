@@ -19,6 +19,7 @@ namespace ViewModel.Views
         private ISortHandler sortHandler;
         private IStringToCollectionParser<decimal> stringToCollectionParser;
         private string errorMessage;
+        private IStringValidator stringValidator;
         
         public int? CompareOperationsCount => this.sortResult?.CompareOperationsCount;
 
@@ -27,7 +28,8 @@ namespace ViewModel.Views
         public OutputControlsViewModel()
         {
             this.sortHandler = new SortHandler();
-            this.stringToCollectionParser = new StringToDecimalCollectionParser();
+            this.stringValidator = new StringToDecimalValidator();
+            this.stringToCollectionParser = new StringToDecimalCollectionParser(this.stringValidator);
         }
 
         public string OutputSequence

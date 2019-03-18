@@ -39,7 +39,7 @@ namespace Business.UnitTest.Sort.Parse
         {
             var validator = new StringToDecimalValidator();
 
-            Assert.ThrowsException<ValidationException>(() => validator.Validate(","));
+            Assert.ThrowsException<ValidationException>(() => validator.Validate("1 3 ,"));
         }
 
         [TestMethod]
@@ -55,7 +55,7 @@ namespace Business.UnitTest.Sort.Parse
         {
             var validator = new StringToDecimalValidator();
 
-            Assert.ThrowsException<ValidationException>(() => validator.Validate("1."));
+            Assert.ThrowsException<ValidationException>(() => validator.Validate("2 0.5 1."));
         }
 
         [TestMethod]
@@ -79,15 +79,15 @@ namespace Business.UnitTest.Sort.Parse
         {
             var validator = new StringToDecimalValidator();
 
-           validator.Validate("1");
+            validator.Validate("1 0 3");
         }
 
         [TestMethod]
-        public void StringToDecimalValidator_Validate_SequenceOfNumberWithDot_Success()
+        public void StringToDecimalValidator_Validate_SequenceOfNumbersWithDot_Success()
         {
             var validator = new StringToDecimalValidator();
 
-            validator.Validate("1.1");
+            validator.Validate("1.1 2.5 3");
         }
-    }   
+    }
 }

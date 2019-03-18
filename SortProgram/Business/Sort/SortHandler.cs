@@ -16,11 +16,13 @@ namespace Business.Sort
     {
         private ISortStrategyFactory sortStrategyFactory;
         private IStringToCollectionParser<decimal> stringToDecimalCollectionParser;
+        public IStringValidator stringValidator;
+
 
         public SortHandler()
         {
             this.sortStrategyFactory = new SortStrategyFactory();
-            this.stringToDecimalCollectionParser = new StringToDecimalCollectionParser();
+            this.stringToDecimalCollectionParser = new StringToDecimalCollectionParser(this.stringValidator);
         }
 
         public ISortResult Handle(string sequence, SortAlgorithmEnum sortAlgorithm, SortTypeEnum sortType)
