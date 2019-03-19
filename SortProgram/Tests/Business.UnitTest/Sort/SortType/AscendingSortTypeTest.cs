@@ -23,7 +23,7 @@ namespace Business.UnitTest.Sort.SortType
         public void AscendingSortType_Update_SequenceHasNumbers_ReturnsSequenceInSameOrder()
         {
             var ascendingSortType = new AscendingSortType();
-            decimal[] expectedSequence = new decimal[] {1, 2, 4, 3};
+            decimal[] expectedSequence = new decimal[] { 1, 2, 4, 3 };
             
             IEnumerable<decimal> updatedSequence = ascendingSortType.Update(expectedSequence);
 

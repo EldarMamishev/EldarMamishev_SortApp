@@ -40,8 +40,8 @@ namespace Business.UnitTest.Sort.SortStrategy.Factory
             var sortStrategyFactory = new SortStrategyFactory(sortTypeFactory);
             IStepCounter stepCounter = new StubIStepCounter()
             {
-                CountSwapOperation = () => { return; },
-                CountCompareOperation = () => { return; }
+                CountSwapOperation = () => { },
+                CountCompareOperation = () => { }
             };
 
             ISortStrategy sortStrategy = sortStrategyFactory.CreateSort(SortAlgorithmEnum.InsertionSort, SortTypeEnum.Ascending, stepCounter);
@@ -56,8 +56,8 @@ namespace Business.UnitTest.Sort.SortStrategy.Factory
             var sortStrategyFactory = new SortStrategyFactory(sortTypeFactory);
             IStepCounter stepCounter = new StubIStepCounter()
             {
-                CountSwapOperation = () => { return; },
-                CountCompareOperation = () => { return; }
+                CountSwapOperation = () => { },
+                CountCompareOperation = () => { }
             };
 
             ISortStrategy sortStrategy = sortStrategyFactory.CreateSort(SortAlgorithmEnum.SelectionSort, SortTypeEnum.Ascending, stepCounter);
@@ -72,8 +72,8 @@ namespace Business.UnitTest.Sort.SortStrategy.Factory
             var sortStrategyFactory = new SortStrategyFactory(sortTypeFactory);
             IStepCounter stepCounter = new StubIStepCounter()
             {
-                CountSwapOperation = () => { return; },
-                CountCompareOperation = () => { return; }
+                CountSwapOperation = () => { },
+                CountCompareOperation = () => { }
             };
 
             ISortStrategy sortStrategy = sortStrategyFactory.CreateSort(SortAlgorithmEnum.QuickSort, SortTypeEnum.Ascending, stepCounter);
@@ -88,8 +88,8 @@ namespace Business.UnitTest.Sort.SortStrategy.Factory
             var sortStrategyFactory = new SortStrategyFactory(sortTypeFactory);
             IStepCounter stepCounter = new StubIStepCounter()
             {
-                CountSwapOperation = () => { return; },
-                CountCompareOperation = () => { return; }
+                CountSwapOperation = () => { },
+                CountCompareOperation = () => { }
             };
 
             ISortStrategy sortStrategy = sortStrategyFactory.CreateSort(SortAlgorithmEnum.MergeSort, SortTypeEnum.Ascending, stepCounter);

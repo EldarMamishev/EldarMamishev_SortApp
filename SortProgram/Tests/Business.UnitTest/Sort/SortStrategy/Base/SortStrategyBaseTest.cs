@@ -22,13 +22,13 @@ namespace Business.UnitTest.Sort.SortStrategy.Base
         {
             ISortType sortType = new Business.Sort.SortType.Interface.Fakes.StubISortType()
             {
-                UpdateIEnumerableOfDecimal = (notUpdatedSequence) => { return notUpdatedSequence; }
+                UpdateIEnumerableOfDecimal = (notUpdatedSequence) => notUpdatedSequence
             };
 
             IStepCounter stepCounter = new StubIStepCounter()
             {
-                CountSwapOperation = () => { return; },
-                CountCompareOperation = () => { return; }
+                CountSwapOperation = () => { },
+                CountCompareOperation = () => { }
             };
 
             var sortStrategy = GetSortStrategy(sortType, stepCounter);
@@ -41,13 +41,13 @@ namespace Business.UnitTest.Sort.SortStrategy.Base
         {
             ISortType sortType = new Business.Sort.SortType.Interface.Fakes.StubISortType()
             {
-                UpdateIEnumerableOfDecimal = (notUpdatedSequence) => { return notUpdatedSequence; }
+                UpdateIEnumerableOfDecimal = (notUpdatedSequence) => notUpdatedSequence
             };
 
             IStepCounter stepCounter = new StubIStepCounter()
             {
-                CountSwapOperation = () => { return; },
-                CountCompareOperation = () => { return; }
+                CountSwapOperation = () => { },
+                CountCompareOperation = () => { }
             };
 
             var sortStrategy = GetSortStrategy(sortType, stepCounter);
@@ -63,13 +63,13 @@ namespace Business.UnitTest.Sort.SortStrategy.Base
         {
             ISortType sortType = new Business.Sort.SortType.Interface.Fakes.StubISortType()
             {
-                UpdateIEnumerableOfDecimal = (notUpdatedSequence) => { return notUpdatedSequence; }
+                UpdateIEnumerableOfDecimal = (notUpdatedSequence) => notUpdatedSequence
             };
 
             IStepCounter stepCounter = new StubIStepCounter()
             {
-                CountSwapOperation = () => { return; },
-                CountCompareOperation = () => { return; }
+                CountSwapOperation = () => { },
+                CountCompareOperation = () => { }
             };
 
             var sortStrategy = GetSortStrategy(sortType, stepCounter);

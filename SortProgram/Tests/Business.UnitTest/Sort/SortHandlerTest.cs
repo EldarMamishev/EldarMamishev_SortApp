@@ -42,8 +42,8 @@ namespace Business.UnitTest.Sort
             };
             IStepCounter stepCounter = new StubIStepCounter()
             {
-                CountSwapOperation = () => { return; },
-                CountCompareOperation = () => { return; }
+                CountSwapOperation = () => { },
+                CountCompareOperation = () => { }
             };
             ISortStrategyFactory factory = new StubISortStrategyFactory()
             {

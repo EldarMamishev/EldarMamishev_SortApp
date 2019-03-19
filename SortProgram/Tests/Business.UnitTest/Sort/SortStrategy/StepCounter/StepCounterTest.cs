@@ -7,6 +7,8 @@ using Business;
 using Business.Sort.SortStrategy;
 using Business.Sort.SortStrategy.StepCounter;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using BaseStepCounter = Business.Sort.SortStrategy.StepCounter;
+
 
 namespace Business.UnitTest.Sort.SortStrategy.StepCounter
 {
@@ -16,7 +18,7 @@ namespace Business.UnitTest.Sort.SortStrategy.StepCounter
         [TestMethod]
         public void StepCounter_CountCompareOperation_WhenCalled_IncrementCompareOperationsCounter()
         {
-            var stepCounter = new Business.Sort.SortStrategy.StepCounter.StepCounter();
+            var stepCounter = new BaseStepCounter.StepCounter();
 
             stepCounter.CountCompareOperation();
 
@@ -26,7 +28,7 @@ namespace Business.UnitTest.Sort.SortStrategy.StepCounter
         [TestMethod]
         public void StepCounter_CountCompareOperation_WhenNotCalled_CompareOperationsCountIsZero()
         {
-            var stepCounter = new Business.Sort.SortStrategy.StepCounter.StepCounter();
+            var stepCounter = new BaseStepCounter.StepCounter();
 
             Assert.AreEqual(0, stepCounter.CompareOperationsCount);
         }
@@ -34,7 +36,7 @@ namespace Business.UnitTest.Sort.SortStrategy.StepCounter
         [TestMethod]
         public void StepCounter_CountSwapOperation_WhenCalled_IncrementSwapOperationsCounter()
         {
-            var stepCounter = new Business.Sort.SortStrategy.StepCounter.StepCounter();
+            var stepCounter = new BaseStepCounter.StepCounter();
 
             stepCounter.CountSwapOperation();
 
@@ -44,7 +46,7 @@ namespace Business.UnitTest.Sort.SortStrategy.StepCounter
         [TestMethod]
         public void StepCounter_CountSwapOperation_WhenNotCalled_SwapOperationsCountIsZero()
         {
-            var stepCounter = new Business.Sort.SortStrategy.StepCounter.StepCounter();
+            var stepCounter = new BaseStepCounter.StepCounter();
 
             Assert.AreEqual(0, stepCounter.SwapOperationsCount);
         }

@@ -27,10 +27,10 @@ namespace Business.Sort
 
         public ISortResult Handle(string sequence, SortAlgorithmEnum sortAlgorithm, SortTypeEnum sortType, IStepCounter stepCounter)
         {
-            if(sequence == null)
+            if (sequence == null)
                 throw new ArgumentNullException(nameof(sequence));
 
-            if(stepCounter == null)
+            if (stepCounter == null)
                 throw new ArgumentNullException(nameof(sequence));
 
             IEnumerable<decimal> numbersSequence = this.stringToDecimalCollectionParser.ParseStringToCollection(sequence);            
