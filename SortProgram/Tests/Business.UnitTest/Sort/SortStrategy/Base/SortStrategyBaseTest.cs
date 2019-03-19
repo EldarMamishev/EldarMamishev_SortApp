@@ -8,6 +8,7 @@ using Business.Sort;
 using Business.Sort.Interface;
 using Business.Sort.SortStrategy.Base;
 using Business.Sort.SortStrategy.StepCounter.Interface;
+using Business.Sort.SortStrategy.StepCounter.Interface.Fakes;
 
 namespace Business.UnitTest.Sort.SortStrategy.Base
 {
@@ -24,7 +25,7 @@ namespace Business.UnitTest.Sort.SortStrategy.Base
                 UpdateIEnumerableOfDecimal = (notUpdatedSequence) => { return notUpdatedSequence; }
             };
 
-            IStepCounter stepCounter = new Business.Sort.SortStrategy.StepCounter.Interface.Fakes.StubIStepCounter()
+            IStepCounter stepCounter = new StubIStepCounter()
             {
                 CountSwapOperation = () => { return; },
                 CountCompareOperation = () => { return; }
@@ -43,7 +44,7 @@ namespace Business.UnitTest.Sort.SortStrategy.Base
                 UpdateIEnumerableOfDecimal = (notUpdatedSequence) => { return notUpdatedSequence; }
             };
 
-            IStepCounter stepCounter = new Business.Sort.SortStrategy.StepCounter.Interface.Fakes.StubIStepCounter()
+            IStepCounter stepCounter = new StubIStepCounter()
             {
                 CountSwapOperation = () => { return; },
                 CountCompareOperation = () => { return; }
@@ -65,7 +66,7 @@ namespace Business.UnitTest.Sort.SortStrategy.Base
                 UpdateIEnumerableOfDecimal = (notUpdatedSequence) => { return notUpdatedSequence; }
             };
 
-            IStepCounter stepCounter = new Business.Sort.SortStrategy.StepCounter.Interface.Fakes.StubIStepCounter()
+            IStepCounter stepCounter = new StubIStepCounter()
             {
                 CountSwapOperation = () => { return; },
                 CountCompareOperation = () => { return; }

@@ -27,6 +27,12 @@ namespace Business.Sort
 
         public ISortResult Handle(string sequence, SortAlgorithmEnum sortAlgorithm, SortTypeEnum sortType, IStepCounter stepCounter)
         {
+            if(sequence == null)
+                throw new ArgumentNullException(nameof(sequence));
+
+            if(stepCounter == null)
+                throw new ArgumentNullException(nameof(sequence));
+
             IEnumerable<decimal> numbersSequence = this.stringToDecimalCollectionParser.ParseStringToCollection(sequence);            
 
             ISortResult sortResult = this.sortStrategyFactory.CreateSort(sortAlgorithm, sortType, stepCounter).Sort(numbersSequence);
