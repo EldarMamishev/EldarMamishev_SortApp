@@ -34,7 +34,7 @@ namespace Business.UnitTest.Sort
         }
 
         [TestMethod]
-        public void SortHandler_Handle_SequenceHasNumbers_()
+        public void SortHandler_Handle_SequenceHasNumbers_ReturnsSortResultWithExpectedValues()
         {
             IStringToCollectionParser<decimal> parser = new StubIStringToCollectionParser<decimal>()
             {
@@ -57,7 +57,7 @@ namespace Business.UnitTest.Sort
                     }
                 }
             };
-            decimal[] expectedSequence = new decimal[] {1, 2, 3};
+            decimal[] expectedSequence = new decimal[] { 1, 2, 3 };
             int expectedCompareCount = 2;
             int expectedSwapCount = 1;
             var handler = new SortHandler(parser, factory);

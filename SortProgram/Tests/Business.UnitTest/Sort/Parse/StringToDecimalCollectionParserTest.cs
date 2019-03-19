@@ -19,8 +19,7 @@ namespace Business.UnitTest.Sort.Parse
             IStringValidator validator = new StubIStringValidator();
             IStringToCollectionParser<decimal> parser = new StringToDecimalCollectionParser(validator);
 
-            Assert.ThrowsException<ArgumentNullException>(() => parser.ParseCollectionToString(null));
-            
+            Assert.ThrowsException<ArgumentNullException>(() => parser.ParseCollectionToString(null));            
         }
                 
         [TestMethod]
@@ -28,7 +27,7 @@ namespace Business.UnitTest.Sort.Parse
         {
             IStringValidator validator = new StubIStringValidator();
             IStringToCollectionParser<decimal> parser = new StringToDecimalCollectionParser(validator);
-            decimal[] collectionSequence = new decimal[]{ 1, 2};
+            decimal[] collectionSequence = new decimal[]{ 1, 2 };
 
             string stringSequence = parser.ParseCollectionToString(collectionSequence);
 
@@ -52,7 +51,7 @@ namespace Business.UnitTest.Sort.Parse
             string stringSequence = "1 2";
 
             IEnumerable<decimal> collectionSequence = parser.ParseStringToCollection(stringSequence);
-            IEnumerable<decimal> expectedSequence = new decimal[] {1, 2};
+            IEnumerable<decimal> expectedSequence = new decimal[] { 1, 2 };
 
             Assert.IsTrue(expectedSequence.SequenceEqual(collectionSequence));
         }
