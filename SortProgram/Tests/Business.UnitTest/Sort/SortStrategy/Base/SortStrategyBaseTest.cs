@@ -56,7 +56,7 @@ namespace Business.UnitTest.Sort.SortStrategy.Base
 
             ISortResult sortResult = sortStrategy.Sort((new decimal[1]));
 
-            Assert.IsTrue(expectedSequence.SequenceEqual(sortResult.SortedNumbers));
+            CollectionAssert.AreEqual(expectedSequence, sortResult.SortedNumbers.ToArray());
         }
 
         [TestMethod]
@@ -79,7 +79,7 @@ namespace Business.UnitTest.Sort.SortStrategy.Base
 
             ISortResult sortResult = sortStrategy.Sort(primarySequence);
 
-            Assert.IsTrue(expectedSequence.SequenceEqual(sortResult.SortedNumbers));
+            CollectionAssert.AreEqual(expectedSequence, sortResult.SortedNumbers.ToArray());
         }
     }    
 }

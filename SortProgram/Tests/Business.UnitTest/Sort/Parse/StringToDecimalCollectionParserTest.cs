@@ -51,9 +51,9 @@ namespace Business.UnitTest.Sort.Parse
             string stringSequence = "1 2";
 
             IEnumerable<decimal> collectionSequence = parser.ParseStringToCollection(stringSequence);
-            IEnumerable<decimal> expectedSequence = new decimal[] { 1, 2 };
+            decimal[] expectedSequence = new decimal[] { 1, 2 };
 
-            Assert.IsTrue(expectedSequence.SequenceEqual(collectionSequence));
+            CollectionAssert.AreEqual(expectedSequence, collectionSequence.ToArray());
         }
     }
 }

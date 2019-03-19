@@ -66,7 +66,7 @@ namespace Business.UnitTest.Sort
 
             Assert.AreEqual(expectedCompareCount, sortResult.CompareOperationsCount, "Comapare operations are not equal");
             Assert.AreEqual(expectedSwapCount, sortResult.SwapOperationsCount, "Swap counts are not equal");
-            Assert.IsTrue(expectedSequence.SequenceEqual(sortResult.SortedNumbers), "Sequences are not equal.");
+            CollectionAssert.AreEqual(expectedSequence, sortResult.SortedNumbers.ToArray(), "Sequences are not equal.");
         }
     }
 }

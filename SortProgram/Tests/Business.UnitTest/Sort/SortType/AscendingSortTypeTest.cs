@@ -27,7 +27,7 @@ namespace Business.UnitTest.Sort.SortType
             
             IEnumerable<decimal> updatedSequence = ascendingSortType.Update(expectedSequence);
 
-            Assert.IsTrue(expectedSequence.SequenceEqual(updatedSequence));
+            CollectionAssert.AreEqual(expectedSequence, updatedSequence.ToArray());
         }
     }
 }
