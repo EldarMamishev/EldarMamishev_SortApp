@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Business.Sort.SortStrategy.Base;
+using Business.Sort.SortStrategy.StepCounter.Interface;
 using Business.Sort.SortType.Interface;
 
 namespace Business.Sort.SortStrategy
@@ -28,7 +29,7 @@ namespace Business.Sort.SortStrategy
             return copySequence;
         }
 
-        public InsertionSort(ISortType sortType) : base(sortType)
+        public InsertionSort(ISortType sortType, IStepCounter stepCounter) : base(sortType, stepCounter)
         { }
     }
 }

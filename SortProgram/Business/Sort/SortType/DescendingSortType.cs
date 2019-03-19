@@ -9,6 +9,12 @@ namespace Business.Sort.SortType
 {
     public sealed class DescendingSortType : ISortType
     {
-        public IEnumerable<decimal> Update(IEnumerable<decimal> sortedSequence) => sortedSequence.Reverse();
+        public IEnumerable<decimal> Update(IEnumerable<decimal> sortedSequence)
+        {
+            if (sortedSequence == null)
+                throw new ArgumentNullException();
+
+            return sortedSequence.Reverse();
+        }
     }
 }
