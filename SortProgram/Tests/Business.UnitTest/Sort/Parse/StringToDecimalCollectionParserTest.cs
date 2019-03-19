@@ -21,7 +21,13 @@ namespace Business.UnitTest.Sort.Parse
 
             Assert.ThrowsException<ArgumentNullException>(() => parser.ParseCollectionToString(null));            
         }
-                
+
+        [TestMethod]
+        public void StringToDecimalCollectionParser_ConstructorIStringValidator_ValidatorIsNull_ThrowArgumentNullException()
+        {
+            Assert.ThrowsException<ArgumentNullException>(() => new StringToDecimalCollectionParser(null));
+        }
+
         [TestMethod]
         public void StringToDecimalCollectionParser_ParseCollectionToString_SequenceWithElements_ReturnsString()
         {

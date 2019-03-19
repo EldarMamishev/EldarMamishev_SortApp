@@ -38,6 +38,29 @@ namespace Business.UnitTest.Sort.SortStrategy.Base
         }
 
         [TestMethod]
+        public void SortStrategy_ConstructorISortTypeIStepCounter_SortTypeIsNull_ThrowArgumentNullException()
+        {            
+            IStepCounter stepCounter = new StubIStepCounter()
+            {
+                CountSwapOperation = () => { },
+                CountCompareOperation = () => { }
+            };
+
+            Assert.ThrowsException<ArgumentNullException>(() => GetSortStrategy(null, stepCounter));
+        }
+
+        [TestMethod]
+        public void SortStrategy_ConstructorISortTypeIStepCounter_StepCounterIsNull_ThrowArgumentNullException()
+        {
+            ISortType sortType = new StubISortType()
+            {
+                UpdateIEnumerableOfDecimal = (notUpdatedSequence) => notUpdatedSequence
+            };
+
+            Assert.ThrowsException<ArgumentNullException>(() => GetSortStrategy(sortType, null));
+        }
+
+        [TestMethod]
         public void SortStrategy_Sort_SequenceIsEmpty_ReturnEmptySequence()
         {
             ISortType sortType = new StubISortType()

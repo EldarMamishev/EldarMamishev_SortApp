@@ -34,6 +34,34 @@ namespace Business.UnitTest.Sort
         }
 
         [TestMethod]
+        public void SortHandler_Handle_StepCounterIsNull_ThrowArgumentNullException()
+        {
+            IStringToCollectionParser<decimal> parser = new StubIStringToCollectionParser<decimal>();
+            string sequence = "1 2";
+            ISortStrategyFactory factory = new StubISortStrategyFactory();
+
+            var handler = new SortHandler(parser, factory);
+
+            Assert.ThrowsException<ArgumentNullException>(() => handler.Handle(sequence, SortAlgorithmEnum.InsertionSort, SortTypeEnum.Ascending, null));
+        }
+
+        [TestMethod]
+        public void SortHandler_ConstructorIStringToCollectionParserISortStrategyFactory_ParserIsNull_ThrowArgumentNullException()
+        {
+            ISortStrategyFactory factory = new StubISortStrategyFactory();
+
+            Assert.ThrowsException<ArgumentNullException>(() => new SortHandler(null, factory));
+        }
+
+        [TestMethod]
+        public void SortHandler_ConstructorIStringToCollectionParserISortStrategyFactory_FactoryIsNull_ThrowArgumentNullException()
+        {
+            IStringToCollectionParser<decimal> parser = new StubIStringToCollectionParser<decimal>();
+
+            Assert.ThrowsException<ArgumentNullException>(() => new SortHandler(parser, null));
+        }
+
+        [TestMethod]
         public void SortHandler_Handle_SequenceHasNumbers_ReturnsSortResultWithExpectedValues()
         {
             IStringToCollectionParser<decimal> parser = new StubIStringToCollectionParser<decimal>()
