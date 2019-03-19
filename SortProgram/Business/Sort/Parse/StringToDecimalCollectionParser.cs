@@ -13,7 +13,7 @@ namespace Business.Sort.Parse
 
         public StringToDecimalCollectionParser(IStringValidator stringValidator)
         {
-            this.stringValidator = stringValidator;
+            this.stringValidator = stringValidator ?? throw new ArgumentNullException(nameof(stringValidator));
         }
 
         public string ParseCollectionToString(IEnumerable<decimal> sequence)

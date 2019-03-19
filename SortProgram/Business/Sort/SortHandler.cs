@@ -21,8 +21,9 @@ namespace Business.Sort
 
         public SortHandler(IStringToCollectionParser<decimal> stringParser, ISortStrategyFactory sortStrategyFactory)
         {
-            this.sortStrategyFactory = sortStrategyFactory;
-            this.stringToDecimalCollectionParser = stringParser;
+            
+            this.sortStrategyFactory = sortStrategyFactory ?? throw new ArgumentNullException(nameof(sortStrategyFactory));
+            this.stringToDecimalCollectionParser = stringParser ?? throw new ArgumentNullException(nameof(stringParser));
         }
 
         public ISortResult Handle(string sequence, SortAlgorithmEnum sortAlgorithm, SortTypeEnum sortType, IStepCounter stepCounter)

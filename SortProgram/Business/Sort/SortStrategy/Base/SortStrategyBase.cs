@@ -38,7 +38,7 @@ namespace Business.Sort.SortStrategy.Base
         public SortStrategyBase(ISortType sortType, IStepCounter stepCounter)
         {
             this.sortType = sortType ?? throw new ArgumentNullException(nameof(sortType));
-            this.stepCounter = stepCounter;
+            this.stepCounter = stepCounter ?? throw new ArgumentNullException(nameof(stepCounter));
         }
 
         protected void Swap(IList<decimal> sequence, int firstIndex, int secondIndex)
